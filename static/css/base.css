@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Bitter:wght@200&family=Playfair+Display&display=swap');
+
+
+/***** Main Styling *****/
+html{
+    height:100%
+}
+
+.body{
+    font-family:'Bacasime Antique', serif ;
+    background: url('/media/woman.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #555;
+}
