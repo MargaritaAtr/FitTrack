@@ -16,7 +16,15 @@ body{
     
 }
 
-.btn-primary{
-    color:whitesmoke;
-    background-color:black;
+.nav-link{
+    color: whitesmoke;
 }
+.text-container{
+   margin-top:3rem;
+
+}
+
+.banner-container{
+    margin-top: 6rem;
+}
+
