@@ -28,3 +28,14 @@ body{
     margin-top: 6rem;
 }
 
+@media (max-width: 1052px) {
+    .banner-container{
+       margin-top: 10rem;
+    }
+   }
+
+@media (max-width: 990px) {
+ .banner-container{
+    margin-top: 3rem;
+ }
+}
