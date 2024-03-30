@@ -15,14 +15,14 @@
             "rating": 4.9,
             "image": "blue-leg.jpg",
             "size": "M",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
         "pk": 2,
         "fields": {
-            "category": 1,
+            "category": 6,
             "sku": "PIL123346",
             "name": "Lilybod Pilates",
             "description": "Dynamic Full Length Legging - Pink",
@@ -34,7 +34,7 @@
             "rating": 4.7,
             "image": "pink-leg.jpg",
             "size": "XS",
-            "sale_price": "25.98"
+            "special_price": "25.98"
         }
     },
     {
@@ -53,7 +53,7 @@
             "rating": 0.0,
             "image": "red-leg.jpg",
             "size": "M",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
@@ -72,7 +72,7 @@
             "rating": 5.0,
             "image": "white-set",
             "size": "M",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
@@ -91,7 +91,7 @@
             "rating": 0.0,
             "image": "grey-set",
             "size": "M",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
@@ -110,12 +110,12 @@
             "rating": 3.8,
             "image": "grey-set",
             "size": "",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 6,
         "fields": {
             "category": 2,
             "sku": "PIL658901",
@@ -130,19 +130,19 @@
             "image": "",
             "size": "",
             "weight": "3 kg",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 7,
         "fields": {
-            "category": 2,
+            "category": 6,
             "sku": "PIL658906",
             "name": "Pilates Ball",
             "description": "Pilates Ball- Purple",
             "new": false,
-            "on_sale": false,
+            "on_sale": true,
             "details": "Whether you're training at home or in the gym, this Pilates Ball will make the perfect workout partner. Ideal for training, toning and strengthening your core muscles, you can advance to using weights to train other areas of your body, including your chest, shoulders and arms. This gym ball is great for improving your balance and co-ordination.",
             "fabric_care": "",
             "price": "10.00",
@@ -150,12 +150,12 @@
             "image": "",
             "size": "65cm",
             "weight": "",
-            "sale_price": "6.75"
+            "special_price": "6.75"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 8,
         "fields": {
             "category": 3,
             "sku": "RUN543127",
@@ -169,12 +169,12 @@
             "rating": 4.0,
             "image": "",
             "size": "M",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 11,
         "fields": {
             "category": 3,
             "sku": "RUN543128",
@@ -189,14 +189,14 @@
             "image": "",
             "size": "S",
             "weight": "",
-            "sale_price": "0.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 13,
         "fields": {
-            "category": 3,
+            "category": 6,
             "sku": "RUN543129",
             "name": "On Runinng",
             "description": "Running Shorts - Black",
@@ -209,12 +209,12 @@
             "image": "",
             "size": "XS",
             "weight": "",
-            "sale_price": "34.00"
+            "special_price": "34.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 14,
         "fields": {
             "category": 4,
             "sku": "RUN565789",
@@ -229,7 +229,7 @@
             "image": "",
             "size": "UK 5",
             "weight": "",
-            "sale_price": "00.00"
+            "special_price":"0.00"
         }
     },
     {
@@ -249,14 +249,14 @@
             "image": "",
             "size": "UK 5.5",
             "weight": "",
-            "sale_price": "00.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 15,
         "fields": {
-            "category": 4,
+            "category": 6,
             "sku": "RUN565793",
             "name": "Just RUN",
             "description": "Axon 3 - Orchid",
@@ -269,12 +269,12 @@
             "image": "",
             "size": "UK 6.5",
             "weight": "",
-            "sale_price": "85.00"
+            "special_price": "85.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 16,
         "fields": {
             "category": 7,
             "sku": "RUN123456",
@@ -289,19 +289,19 @@
             "image": "",
             "size": "One",
             "weight": "",
-            "sale_price": "00.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 17,
         "fields": {
             "category": 7,
             "sku": "RUN123457",
             "name": "Just Run",
             "description": "Wide Cuff Beanie - Black",
             "new": false,
-            "on_sale": true,
+            "on_sale": false,
             "details": "Beanies are undefeated fashion statements. And you're feeling a little extra outspoken today. Or maybe it's just cold out. Either way this adidas Wide Cuff Beanie has the warmth and wonder you need to complete your look.",
             "fabric_care": "53% recycled polyester, 47% polyacrylics plain knit.Hand wash.",
             "price": "27.00",
@@ -309,12 +309,12 @@
             "image": "",
             "size": "One",
             "weight": "",
-            "sale_price": "00.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 18,
         "fields": {
             "category": 7,
             "sku": "RUN123458",
@@ -329,12 +329,12 @@
             "image": "",
             "size": "One",
             "weight": "",
-            "sale_price": "34.00"
+            "special_price": "34.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 19,
         "fields": {
             "category": 7,
             "sku": "RUN123459",
@@ -349,12 +349,12 @@
             "image": "",
             "size": "One",
             "weight": "",
-            "sale_price": "00.00"
+            "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 20,
         "fields": {
             "category": 7,
             "sku": "RUN123460",
@@ -363,13 +363,13 @@
             "new": false,
             "on_sale": true,
             "details": "The Ribble II Hydration Belt makes carrying fluids for both runners, and walkers, easy and comfortable. A 650ml water bottle is included. It has a large zipped pocket to store valuables, energy gels and other essentials. The water bottle holster is angled to make it easy to access with an additional pocket.",
-            "materials": "",
+            "materials": "recycled rubber",
             "price": "28.00",
             "rating": 3.9,
             "image": "",
             "size": "One",
             "weight": "",
-            "sale_price": "16.00"
+            "special_price": "16.00"
         }
     }
 ]
