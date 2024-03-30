@@ -28,6 +28,12 @@ body{
     margin-top: 6rem;
 }
 
+h4{
+    color:rgb(52, 6, 44);
+}
+
+/* styling for screen less then 1052px  */
+
 @media (max-width: 1052px) {
     .banner-container{
        margin-top: 10rem;
