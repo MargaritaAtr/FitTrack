@@ -70,7 +70,7 @@
             "fabric_care": "25% polyester, 55% cotton, 20% elastane.",
             "price": "25.00",
             "rating": 5.0,
-            "image": "white-set",
+            "image": "white-set.jpg",
             "size": "M",
             "special_price": "0.00"
         }
@@ -89,7 +89,7 @@
             "fabric_care": "25% polyester, 55% cotton, 20% elastane.",
             "price": "65.00",
             "rating": 0.0,
-            "image": "grey-set",
+            "image": "grey-set.jpg",
             "size": "M",
             "special_price": "0.00"
         }
@@ -108,7 +108,7 @@
             "fabric_care": "99% Latex-free. Not recommended for those with Latex sensitivities.",
             "price": "55.00",
             "rating": 3.8,
-            "image": "grey-set",
+            "image": "orange.mat.jpg",
             "size": "",
             "special_price": "0.00"
         }
