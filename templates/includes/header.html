@@ -49,9 +49,9 @@
                                         Pilates Essentials
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="" class="dropdown-item">Clothing</a>
-                                        <a href="" class="dropdown-item ">Accessories</a>
-                                        <a href="" class="dropdown-item ">All Essentials</a>
+                                        <a href="{% url 'products' %}?category=pilates_clothing" class="dropdown-item">Clothing</a>
+                                        <a href="{% url 'products' %}?category=pilates_accessories" class="dropdown-item ">Accessories</a>
+                                        <a href="{% url 'products' %}?category=pilates_accessories,pilates_clothing" class="dropdown-item ">All Essentials</a>
                                     </div>
                                 </li>
                                 <!-- Outdoor running dropdown -->
@@ -60,10 +60,10 @@
                                         Outdoor Running
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="" class="dropdown-item">Clothing</a>
-                                        <a href="" class="dropdown-item ">Footwear</a>
-                                        <a href="" class="dropdown-item ">Running Accessories</a>
-                                        <a href="" class="dropdown-item ">All Essentials</a>
+                                        <a href="{% url 'products' %}?category=running_clothing" class="dropdown-item">Clothing</a>
+                                        <a href="{% url 'products' %}?category=footwear"  class="dropdown-item ">Footwear</a>
+                                        <a href="{% url 'products' %}?category=running_accessories" class="dropdown-item ">Running Accessories</a>
+                                        <a href="{% url 'products' %}?category=running_clothing,footwear,running_accessories"  class="dropdown-item ">All Essentials</a>
                                     </div>
                                 </li>
                                 <!-- Special offers dropdown -->
@@ -72,9 +72,9 @@
                                         Special Offers
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="" class="dropdown-item ">New Arrivals</a>
-                                        <a href="" class="dropdown-item ">Specail price</a>
-                                        <a href="" class="dropdown-item ">All Specials</a>
+                                        <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item ">New Arrivals</a>
+                                        <a href="{% url 'products' %}?category=special_price"class="dropdown-item ">Specail price</a>
+                                        <a href="{% url 'products' %}?category=new_arrivals,special_price" class="dropdown-item ">All Specials</a>
                                     </div>
                                 </li>
                             </ul>
