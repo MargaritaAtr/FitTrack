@@ -31,7 +31,7 @@ class Product(models.Model):
     size = models.CharField(max_length=254, null=True, blank=True)
     weight =  models.CharField(max_length=254, null=True, blank=True)
     special_price = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True, default=None)
+        max_digits=6, decimal_places=2, null=False, blank=False, default=0)
 
     def _str_(self):
         return self.name
