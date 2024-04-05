@@ -21,7 +21,7 @@
             <div class="row mt-1 mb-2">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                     <div class="w-50">
-                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0  border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -35,9 +35,9 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 order-md-first">
-                    <p class="text-muted mt-3 text-center text-md-left">
+                    <p class="text-dark mt-3 text-center text-md-left">
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <span class="small text-white"><a href="{% url 'products' %}">Products Home</a> | </span>
+                            <span class="medium text-white"><a class="text-dark" href="{% url 'products' %}">Products Home</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for <strong class="text-white">"{{ search_term }}"</strong>{% endif %}
                     </p>
@@ -65,15 +65,15 @@
                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                             {% if product.category %}
                             <p class="small mt-1 mb-0">
-                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                <a class="text-dark" href="{% url 'products' %}?category={{ product.category.name }}">
+                                    <i class="fas fa-tag mr-1 text-dark"></i>{{ product.category.friendly_name }}
                                 </a>
                             </p>
                             {% endif %}
                             {% if product.rating %}
-                            <small class="text-muted"><i class="fas fa-star mr-1 text-warining"></i>{{ product.rating }} / 5</small>
+                            <small class="text-primary"><i class="fas fa-star mr-1 text-warning"></i>{{ product.rating }} / 5</small>
                             {% else %}
-                            <small class="text-muted">No Rating</small>
+                            <small class="text-primary">No Rating</small>
                             {% endif %}
                         </div>
                     </div>
