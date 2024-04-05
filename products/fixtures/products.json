@@ -70,7 +70,7 @@
             "fabric_care": "25% polyester, 55% cotton, 20% elastane.",
             "price": "25.00",
             "rating": 5.0,
-            "image": "",
+            "image": "white-set.jpg",
             "size": "M",
             "special_price": "0.00"
         }
@@ -96,7 +96,7 @@
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 6,
         "fields": {
             "category": 2,
             "sku": "PIL658900",
@@ -108,14 +108,14 @@
             "fabric_care": "99% Latex-free. Not recommended for those with Latex sensitivities.",
             "price": "55.00",
             "rating": 3.8,
-            "image": "orange.mat.jpg",
+            "image": "orange-mat.jpg",
             "size": "",
             "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 6,
+        "pk": 7,
         "fields": {
             "category": 2,
             "sku": "PIL658901",
@@ -128,14 +128,14 @@
             "price": "6.00",
             "rating": 4.8,
             "image": "",
-            "size": "",
+            "size": "noimage.jpg",
             "weight": "3 kg",
             "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 7,
+        "pk": 8,
         "fields": {
             "category": 6,
             "sku": "PIL658906",
@@ -147,7 +147,7 @@
             "fabric_care": "",
             "price": "10.00",
             "rating": 5.0,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "65cm",
             "weight": "",
             "special_price": "6.75"
@@ -155,7 +155,7 @@
     },
     {
         "model": "products.product",
-        "pk": 8,
+        "pk": 9,
         "fields": {
             "category": 5,
             "sku": "RUN543127",
@@ -167,14 +167,14 @@
             "fabric_care": "100% recycled polyester plain weave. Machine wash cold. Do not use fabric softener. Wash inside out. Use mild detergent only. Wash with fasteners closed. Wash with similar colours. Do not dry clean. Do not bleach. Do not iron.",
             "price": "45.00",
             "rating": 4.0,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "M",
             "special_price": "0.00"
         }
     },
     {
         "model": "products.product",
-        "pk": 9,
+        "pk": 10,
         "fields": {
             "category": 3,
             "sku": "RUN543128",
@@ -186,7 +186,7 @@
             "fabric_care": "Body: 80% polyester/20% spandex. Panels: 92% polyester/8% spandex. Mesh: 81% polyester/19% spandex. Gusset lining: 100% polyester. Machine wash",
             "price": "49.00",
             "rating": 5.0,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "S",
             "weight": "",
             "special_price": "0.00"
@@ -194,7 +194,7 @@
     },
     {
         "model": "products.product",
-        "pk": 10,
+        "pk": 11,
         "fields": {
             "category": 6,
             "sku": "RUN543129",
@@ -206,7 +206,7 @@
             "fabric_care": "Outer brief: 87% polyamide, 13% elastane. Inner brief: 65% recycled polyamide, 35% elastane. Machine wash 30°C gentle. Iron on low. Do not dry clean, tumble dry or bleach.",
             "price": "55.00",
             "rating": 4.5,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "XS",
             "weight": "",
             "special_price": "34.00"
@@ -214,7 +214,7 @@
     },
     {
         "model": "products.product",
-        "pk": 11,
+        "pk": 12,
         "fields": {
             "category": 4,
             "sku": "RUN565789",
@@ -226,7 +226,7 @@
             "fabric_care": "Lining: Textile; Outsole: Rubber; Upper: Textile; Sockliner: Textile",
             "price": "110.00",
             "rating": 4.9,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "UK 5",
             "weight": "",
             "special_price":"0.00"
@@ -234,7 +234,7 @@
     },
     {
         "model": "products.product",
-        "pk": 12,
+        "pk": 13,
         "fields": {
             "category": 4,
             "sku": "RUN565792",
@@ -246,7 +246,7 @@
             "fabric_care": "Breathable mesh upper, EVA foam, High-abrasion rubber",
             "price": "130.00",
             "rating": 4.9,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "UK 5.5",
             "weight": "",
             "special_price": "0.00"
@@ -254,7 +254,7 @@
     },
     {
         "model": "products.product",
-        "pk": 13,
+        "pk": 14,
         "fields": {
             "category": 6,
             "sku": "RUN565793",
@@ -266,7 +266,7 @@
             "fabric_care": "Breathable mesh upper; PWRRUN foam midsole, EVA in the midsole uses 36% bio-based foam",
             "price": "120.00",
             "rating": 4.3,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "UK 6.5",
             "weight": "",
             "special_price": "85.00"
@@ -274,7 +274,7 @@
     },
     {
         "model": "products.product",
-        "pk": 14,
+        "pk": 15,
         "fields": {
             "category": 7,
             "sku": "RUN123456",
@@ -286,7 +286,7 @@
             "fabric_care": "Tear proof woven fabric",
             "price": "40.00",
             "rating": 4.8,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "One",
             "weight": "",
             "special_price": "0.00"
@@ -294,7 +294,7 @@
     },
     {
         "model": "products.product",
-        "pk": 15,
+        "pk": 16,
         "fields": {
             "category": 7,
             "sku": "RUN123457",
@@ -306,7 +306,7 @@
             "fabric_care": "53% recycled polyester, 47% polyacrylics plain knit.Hand wash.",
             "price": "27.00",
             "rating": 4.8,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "One",
             "weight": "",
             "special_price": "0.00"
@@ -314,7 +314,7 @@
     },
     {
         "model": "products.product",
-        "pk": 16,
+        "pk": 17,
         "fields": {
             "category": 7,
             "sku": "RUN123458",
@@ -326,7 +326,7 @@
             "fabric_care": "Glove: Palm: 71% polyester/12% spandex/10% nylon/7% polyurethane (PU foam). Back: 86% polyester/14% spandex. Other: 87% polyester/13% spandex .Headband: 70% polyester/18% nylon/12% spandex. Hand wash",
             "price": "43.00",
             "rating": 3.9,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "One",
             "weight": "",
             "special_price": "34.00"
@@ -334,19 +334,19 @@
     },
     {
         "model": "products.product",
-        "pk": 17,
+        "pk": 18,
         "fields": {
-            "category": 7,
+            "category": 8,
             "sku": "RUN123459",
             "name": "Just Run",
             "description": "Runners Bottle 580cc - UP580",
-            "new": false,
+            "new": true,
             "on_sale": false,
             "details": "The Runner’s Bottle is a perfect, lightweight, handheld bottle to keep you hydrated during your run.",
             "materials": "recycled plastic",
             "price": "6.00",
             "rating": 3.9,
-            "image": "",
+            "image": "noimage.jpg",
             "size": "One",
             "weight": "",
             "special_price": "0.00"
@@ -354,7 +354,7 @@
     },
     {
         "model": "products.product",
-        "pk": 18,
+        "pk": 19,
         "fields": {
             "category": 7,
             "sku": "RUN123460",
@@ -366,7 +366,7 @@
             "materials": "recycled rubber",
             "price": "28.00",
             "rating": 3.9,
-            "image": "",
+            "image": "yoga-mat.jpg",
             "size": "One",
             "weight": "",
             "special_price": "16.00"
