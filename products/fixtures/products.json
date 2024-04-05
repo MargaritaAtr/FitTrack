@@ -70,7 +70,7 @@
             "fabric_care": "25% polyester, 55% cotton, 20% elastane.",
             "price": "25.00",
             "rating": 5.0,
-            "image": "white-set.jpg",
+            "image": "",
             "size": "M",
             "special_price": "0.00"
         }
@@ -157,7 +157,7 @@
         "model": "products.product",
         "pk": 8,
         "fields": {
-            "category": 3,
+            "category": 5,
             "sku": "RUN543127",
             "name": "Fit Running",
             "description": "Adizero Essentials Running Jacket - Black",
@@ -174,13 +174,13 @@
     },
     {
         "model": "products.product",
-        "pk": 11,
+        "pk": 9,
         "fields": {
             "category": 3,
             "sku": "RUN543128",
             "name": "Nike",
             "description": "Epic Fast Pocket Running Leggings - Black",
-            "new": false,
+            "new": true,
             "on_sale": false,
             "details": "Get ready to dominate your workout in style with the Nike Epic Fast Mid-Rise Pocket Running Leggings. Featuring curved back seams give the perfect silhouette. Breathable mesh panels and a reflective element for visibility during low light conditions, you'll shine no matter the weather.",
             "fabric_care": "Body: 80% polyester/20% spandex. Panels: 92% polyester/8% spandex. Mesh: 81% polyester/19% spandex. Gusset lining: 100% polyester. Machine wash",
@@ -194,7 +194,7 @@
     },
     {
         "model": "products.product",
-        "pk": 13,
+        "pk": 10,
         "fields": {
             "category": 6,
             "sku": "RUN543129",
@@ -214,7 +214,7 @@
     },
     {
         "model": "products.product",
-        "pk": 14,
+        "pk": 11,
         "fields": {
             "category": 4,
             "sku": "RUN565789",
@@ -234,7 +234,7 @@
     },
     {
         "model": "products.product",
-        "pk": 5,
+        "pk": 12,
         "fields": {
             "category": 4,
             "sku": "RUN565792",
@@ -254,7 +254,7 @@
     },
     {
         "model": "products.product",
-        "pk": 15,
+        "pk": 13,
         "fields": {
             "category": 6,
             "sku": "RUN565793",
@@ -274,7 +274,7 @@
     },
     {
         "model": "products.product",
-        "pk": 16,
+        "pk": 14,
         "fields": {
             "category": 7,
             "sku": "RUN123456",
@@ -294,7 +294,7 @@
     },
     {
         "model": "products.product",
-        "pk": 17,
+        "pk": 15,
         "fields": {
             "category": 7,
             "sku": "RUN123457",
@@ -314,7 +314,7 @@
     },
     {
         "model": "products.product",
-        "pk": 18,
+        "pk": 16,
         "fields": {
             "category": 7,
             "sku": "RUN123458",
@@ -334,7 +334,7 @@
     },
     {
         "model": "products.product",
-        "pk": 19,
+        "pk": 17,
         "fields": {
             "category": 7,
             "sku": "RUN123459",
@@ -354,7 +354,7 @@
     },
     {
         "model": "products.product",
-        "pk": 20,
+        "pk": 18,
         "fields": {
             "category": 7,
             "sku": "RUN123460",
