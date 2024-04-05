@@ -115,27 +115,7 @@
     },
     {
         "model": "products.product",
-        "pk": 5,
-        "fields": {
-            "category": 2,
-            "sku": "PIL658901",
-            "name": "Bodymax Dumbbells",
-            "description": "BodyMax Neoprene Studio Dumbbells",
-            "new": false,
-            "on_sale": false,
-            "details": "The BodyMax Neoprene Studio Dumbbells enhance every rep and bring versatility to your workout routine. With a durable neoprene layer, hexagonal shaping, and a comfortable grip, the BodyMax Neoprene Studio Dumbbells are ideal for strength training, fitness exercises, or rehabilitation.",
-            "fabric_care": "",
-            "price": "6.00",
-            "rating": 4.8,
-            "image": "",
-            "size": "noimage.jpg",
-            "weight": "3 kg",
-            "special_price": "0.00"
-        }
-    },
-    {
-        "model": "products.product",
-        "pk": 8,
+        "pk": 7,
         "fields": {
             "category": 6,
             "sku": "PIL658906",
@@ -155,7 +135,7 @@
     },
     {
         "model": "products.product",
-        "pk": 9,
+        "pk": 8,
         "fields": {
             "category": 5,
             "sku": "RUN543127",
@@ -174,7 +154,7 @@
     },
     {
         "model": "products.product",
-        "pk": 10,
+        "pk": 9,
         "fields": {
             "category": 3,
             "sku": "RUN543128",
@@ -194,7 +174,7 @@
     },
     {
         "model": "products.product",
-        "pk": 11,
+        "pk": 10,
         "fields": {
             "category": 6,
             "sku": "RUN543129",
@@ -214,7 +194,7 @@
     },
     {
         "model": "products.product",
-        "pk": 12,
+        "pk": 11,
         "fields": {
             "category": 4,
             "sku": "RUN565789",
@@ -234,7 +214,7 @@
     },
     {
         "model": "products.product",
-        "pk": 13,
+        "pk": 12,
         "fields": {
             "category": 4,
             "sku": "RUN565792",
@@ -254,7 +234,7 @@
     },
     {
         "model": "products.product",
-        "pk": 14,
+        "pk": 13,
         "fields": {
             "category": 6,
             "sku": "RUN565793",
@@ -274,7 +254,7 @@
     },
     {
         "model": "products.product",
-        "pk": 15,
+        "pk": 14,
         "fields": {
             "category": 7,
             "sku": "RUN123456",
@@ -294,7 +274,7 @@
     },
     {
         "model": "products.product",
-        "pk": 16,
+        "pk": 15,
         "fields": {
             "category": 7,
             "sku": "RUN123457",
@@ -314,7 +294,7 @@
     },
     {
         "model": "products.product",
-        "pk": 17,
+        "pk": 16,
         "fields": {
             "category": 7,
             "sku": "RUN123458",
@@ -334,7 +314,7 @@
     },
     {
         "model": "products.product",
-        "pk": 18,
+        "pk": 17,
         "fields": {
             "category": 8,
             "sku": "RUN123459",
@@ -342,7 +322,7 @@
             "description": "Runners Bottle 580cc - UP580",
             "new": true,
             "on_sale": false,
-            "details": "The Runner’s Bottle is a perfect, lightweight, handheld bottle to keep you hydrated during your run.",
+            "details": "The Runners Bottle is a perfect, lightweight, handheld bottle to keep you hydrated during your run.",
             "materials": "recycled plastic",
             "price": "6.00",
             "rating": 3.9,
@@ -350,26 +330,6 @@
             "size": "One",
             "weight": "",
             "special_price": "0.00"
-        }
-    },
-    {
-        "model": "products.product",
-        "pk": 19,
-        "fields": {
-            "category": 7,
-            "sku": "RUN123460",
-            "name": "Just Run",
-            "description": "Ribble II Hydration Belt - UP6351",
-            "new": false,
-            "on_sale": true,
-            "details": "The Ribble II Hydration Belt makes carrying fluids for both runners, and walkers, easy and comfortable. A 650ml water bottle is included. It has a large zipped pocket to store valuables, energy gels and other essentials. The water bottle holster is angled to make it easy to access with an additional pocket.",
-            "materials": "recycled rubber",
-            "price": "28.00",
-            "rating": 3.9,
-            "image": "yoga-mat.jpg",
-            "size": "One",
-            "weight": "",
-            "special_price": "16.00"
         }
     }
 ]
