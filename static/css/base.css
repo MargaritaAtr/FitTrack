@@ -44,7 +44,9 @@ h4{
 .mt-3,.nav-link, p{
     color:#fff !important;
 }
-
+.text-purple{
+    color: purple !important;
+}
 
 /* styling for screen less then 1052px  */
 

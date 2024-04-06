@@ -8,9 +8,10 @@
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="logo-font">Products</h2>
+             <!-- Show a badge for all categories filtered -->
             {% for c in current_categories %}
             <a class="text-decoration-none me-1" href="{% url 'products' %}?category={{ c.name }}">
-                <span class="p-2 mt-2 badge badge-white text-black">{{ c.friendly_name }}</span>
+                <span class="p-2 mt-2 badge bg-dark white-text">{{ c.friendly_name }}</span>
             </a>
         {% endfor %}
         <hr class="w-50 mx-auto mb-3">
@@ -57,12 +58,23 @@
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
-                    <p class="mb-0">{{ product.name }}</p>
+                    <p class="mb-0">
+                    <a class="text-purple text-decoration-none" href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+                {% if product.new == True %}
+                <a class="text-decoration-none" href="{% url 'products' %}?new">
+                    <span class="badge bg-primary">New</span>
+                </a>
+            {% endif %}
+            {% if product.on_sale == True %}
+            <a class="text-decoration-none" href="{% url 'products' %}?on_sale">
+                <span class="badge bg-danger">Special price</span>
+            </a>
+            {% endif %}
                 </div>
                 <div class="card-footer bg-white pt-0 border-0 text-left">
                     <div class="row">
                         <div class="col">
-                            <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                            <p class="lead mb-0 text-left font-weight-bold text-dark">£{{ product.price }}</p>
                             {% if product.category %}
                             <p class="small mt-1 mb-0">
                                 <a class="text-dark" href="{% url 'products' %}?category={{ product.category.name }}">

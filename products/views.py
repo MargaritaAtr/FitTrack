@@ -43,6 +43,16 @@ def view_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+        if 'new' in request.GET:
+            products = products.filter(new=True) 
+
+        if 'on_sale' in request.GET:
+            products = products.filter(on_sale=True)
+
+        if 'all_specials' in request.GET:
+            products = products.filter(all_specials=True)    
+       
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
