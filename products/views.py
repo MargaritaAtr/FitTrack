@@ -51,7 +51,7 @@ def view_products(request):
             products = products.filter(on_sale=True)
 
         if 'all_specials' in request.GET:
-            products = products.filter(all_specials=True)    
+            products = products.filter(all_specials=True)     
        
 
     current_sorting = f'{sort}_{direction}'

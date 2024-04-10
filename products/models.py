@@ -19,6 +19,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
+    different_size = models.BooleanField(default=False)
     description = models.TextField() 
     new = models.BooleanField(default=False)
     on_sale = models.BooleanField(default=False)
@@ -36,3 +37,18 @@ class Product(models.Model):
 
     def _str_(self):
         return self.name
+
+
+class ProductSize_stock(models.Model):
+
+    
+    # product = models.ForeignKey(
+    #     Product, null=False, blank=False, on_delete=models.CASCADE,
+    #     related_name='variants'
+    # )
+    size = models.IntegerField(default=0, null=False, blank=False)
+    stock_count = models.IntegerField(default=0)
+
+
+    def __str__(self):
+        return f"{self.product.name} - {self.size}"

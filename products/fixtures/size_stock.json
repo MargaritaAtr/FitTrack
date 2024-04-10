@@ -1,0 +1,21 @@
+[
+   {
+        "model": "products.size",
+        "pk": 1,
+        "fields": {
+        "product": 1,
+        "size": "S",
+        "stock_count": 2
+   }
+},
+
+{
+    "model": "products.size",
+    "pk": 2,
+    "fields": {
+    "product": 1,
+    "size": "M",
+    "stock_count": 3
+}
+}
+]
