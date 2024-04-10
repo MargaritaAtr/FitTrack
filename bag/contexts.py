@@ -1,5 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from products.models import Product
 
 def apply_discount(original_price, discount_code):
     """
@@ -34,13 +36,20 @@ def bag_contents(request):
     bag_items = []
     total = 0
     product_count = 0
+    bag = request.session.get('bag', {})
     original_price = 0
     discount_code = request.GET.get('discount_code')  # Assuming discount_code is passed as a query parameter
 
     # Calculate total and product count based on bag items
-    for item in bag_items:
-        total += item.price
-        product_count += item.quantity
+    for item_id, quantity in bag.items():
+        product = get_object_or_404(Product, pk=item_id)
+        total += quantity * product.price
+        product_count += quantity
+        bag_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'product': product,
+        })
 
     # Calculate delivery cost and free delivery threshold
     if product_count > 0 and total < settings.FREE_DELIVERY_THRESHOLD:

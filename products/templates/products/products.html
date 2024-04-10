@@ -74,7 +74,14 @@
                 <div class="card-footer bg-white pt-0 border-0 text-left">
                     <div class="row">
                         <div class="col">
-                            <p class="lead mb-0 text-left font-weight-bold text-dark">£{{ product.price }}</p>
+                            {% if product.special_price > 0 %}
+                            <span class="font-weight-bold">
+                                <del class="text-dark">£{{ product.price }}</del>
+                            </span>
+                            <span class="text-danger font-weight-bold">£{{ product.special_price }}</span>
+                        {% else %}
+                            <span class="text-dark">£{{ product.price }}</span>
+                        {% endif %}
                             {% if product.category %}
                             <p class="small mt-1 mb-0">
                                 <a class="text-dark" href="{% url 'products' %}?category={{ product.category.name }}">
