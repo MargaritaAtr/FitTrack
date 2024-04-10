@@ -3,7 +3,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
                 <!-- Main Logo  -->
-            <a class="navbar-brand mx-auto col-lg-3 text-white" href="">Fit Track
+            <a class="navbar-brand mx-auto col-lg-3 text-white" href="{% url 'home' %}">Fit Track
             </a>
 
             <div class="offcanvas offcanvas-end bg-dark " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -104,7 +104,7 @@
                                 </div>
                             </li>
                             <li class="list-inline-item account-and-bag">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{% url 'view_bag' %}">
                                     <div class="text-center hover-blue">
                                         <div><i class="fas fa-shopping-bag fa-lg icon"></i></div>
                                         <p class="my-0 text-white">
