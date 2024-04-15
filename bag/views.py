@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-
+from django.conf import settings
+from django.http import HttpResponseBadRequest
+from decimal import Decimal
 from products.models import Product
+
 
 # Create your views here.
 
@@ -92,3 +95,4 @@ def remove_item_from_bag(request, item_id):
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
+    
