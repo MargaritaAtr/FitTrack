@@ -37,7 +37,7 @@
                                     <i class="fas fa-tag mr-1 bd-primary"></i>{{ product.category.friendly_name }}
                                 </a>
                             </p>
-                            {% endif %}
+                    {% endif %}
                     {% if product.rating %}
                         <small class="text-primary"><i class="fas fa-star text-warning"></i>{{ product.rating }} / 5</small>
                     {% else %}
@@ -48,18 +48,39 @@
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            {% if product.size%}
+                            {% if product.different_size == True %}
+                                {% if product.category.name == "footwear" %}
+                                    <div class="col-12">
+                                        <p><strong>Size:</strong></p>
+                                        <select class="form-control rounded-0 w-50 form-light" name="product_size" id='id_product_size'>
+                                            <option value="4">4</option>
+                                            <option value="5" selected>5</option>
+                                            <option value="5.5">5.5</option>
+                                            <option value="6">6</option>
+                                            <option value="6.5">6.5</option>
+                                        </select>
+                                    </div>
+                                {% else %}  
+                                    <div class="col-12">
+                                        <p><strong>Size:</strong></p>
+                                        <select class="form-control rounded-0 w-50 form-light" name="product_size" id='id_product_size'>
+                                            <option value="xs">XS</option>
+                                            <option value="s">S</option>
+                                            <option value="m" selected>M</option>
+                                            <option value="l">L</option>
+                                            <option value="xl">XL</option>
+                                        </select>
+                                    </div>
+                                {% endif %}
+                            {% else %}
                                 <div class="col-12">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50 form-light" name="product_size" id='id_product_size'>
-                                        <option value="xs">XS</option>
-                                        <option value="s">S</option>
-                                        <option value="m" selected>M</option>
-                                        <option value="l">L</option>
-                                        <option value="xl">XL</option>
+                                        <option value="One">One</option>
                                     </select>
                                 </div>
-                           {% endif %}
+                            {% endif %}
+                        </div>     
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">

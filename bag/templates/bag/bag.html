@@ -34,6 +34,7 @@
                                         </td>
                                         <td class="py-3">
                                             <p class="my-0 text-dark "><strong>{{ item.product.name }}</strong></p>
+                                            <p class="my-0 text-light "><strong>Size:</strong>{% if item.product.different_size %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                             <p class="my-0 small text-light">SKU: {{ item.product.sku|upper }}</p>
                                         </td>
                                         <td class="py-3">
