@@ -53,6 +53,13 @@ h4{
     cursor:pointer;
 }
 
+.message-container{
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    z-index: 99999999999;
+    max-width: 90%;
+}
 
 /* styling for screen less then 1052px  */
 
