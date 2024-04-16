@@ -61,6 +61,11 @@ h4{
     max-width: 90%;
 }
 
+.custom-toast {
+    overflow: visible;
+    background-color: #fff;
+}
+
 /* styling for screen less then 1052px  */
 
 @media (max-width: 1052px) {
