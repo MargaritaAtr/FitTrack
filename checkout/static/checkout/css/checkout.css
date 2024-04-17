@@ -1,3 +1,40 @@
-.text-purple{
-    color: rgb(52, 6, 44);
+.StripeElement,
+.stripe-style-input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
 }
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+    box-shadow: 0 0 0 0.25rem rgba(33, 37, 43, 0.25);
+    border: 1px solid #1a1a1b;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5c6 !important;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+select, 
+select option {
+    color: #060e17;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #000;
+}
+
