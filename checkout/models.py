@@ -26,6 +26,8 @@ class Order(models.Model):
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    original_bag = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
 
     def _generate_order_number(self):
@@ -68,13 +70,18 @@ class OrderLineItem(models.Model):
     product_size = models.CharField(max_length=2, null=True, blank=True) 
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
-
+    
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total 
-        and update the order total.
+        and update the order total, considering special prices.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        if self.product.special_price:
+            lineitem_total = self.product.special_price * self.quantity
+        else:
+            lineitem_total = self.product.price * self.quantity
+
+        self.lineitem_total = lineitem_total
         super().save(*args, **kwargs)
 
     def __str__(self):
