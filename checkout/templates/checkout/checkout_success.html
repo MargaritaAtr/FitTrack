@@ -188,11 +188,16 @@
     </div>
         <div class="row">
         <div class="col-12 text-center">
-            <a href="{% url 'products' %}?all_specials"  class="btn btn-dark text-center mt-2 shopping-button">
-                <i class="fas fa-gifts pe-2"></i>Check out our latest speacial deals!
-            </a>
+            {% if from_profile %}
+                <a href="{% url 'profile' %}"  class="btn btn-dark text-center mt-2 shopping-button">
+                    <i class="fas fa-angle-right pe-2"></i>Back to Profile
+                </a>
+            {% else %}
+                <a href="{% url 'products' %}?all_specials"  class="btn btn-dark text-center mt-2 shopping-button">
+                    <i class="fas fa-gifts pe-2"></i>Check out our latest speacial deals!
+                </a>
+            {% endif %}
         </div>
-
     </div>
 </div>
 
