@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load static %}
+
+
+{% block content %}
+<div class="cover"></div>
+<div class="container-fluid vh-100 clear-nav">
+    {% include 'includes/banner.html'%}
+    <div class="row">
+        <div class="col text-center ">
+            <h2 class="text-dark">Product Management</h2>
+            <h5 class="text-light text-uppercase">Edit Product</h5>
+            <hr class="w-50 mx-auto mb-3">
+        </div>
+    </div>
+    <div class="row col-12 col-md-6 mx-auto">
+        <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="text-right">
+                <a class="btn btn-dark rounded-0" href="{% url 'products' %}">Cancel</a>
+                <button class="btn btn-dark rounded-0" type="submit">Update Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
