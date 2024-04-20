@@ -1,0 +1,13 @@
+Subject: New Customer Enquiry
+
+Hello,
+
+We've received a new enquiry from a customer:
+
+Customer Name: {{ name }}
+Customer Email: {{ email }}
+Message:
+{{ message }}
+
+Best regards,
+
