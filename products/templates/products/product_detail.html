@@ -1,6 +1,10 @@
 {% extends "base.html"%}
 {% load static %}
 
+{% block extra_css %}
+{{ block.super }}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="cover text-white"></div>
@@ -19,7 +23,57 @@
                         </a>
                     {% endif %}
                 </div>
-            </div>
+                <!-- Review carousel -->
+                <div class="col-12">
+                    {% if product.reviews.all|length > 0 %}
+                        {% if user.is_authenticated %}
+                        <p class="text-center">Why not tell us about your own experience by clicking <a href="{% url 'add_review' product.id %}">here</a>?</p>
+                            {% else %}
+                            <p class="text-center">Why not <a class="text-purple" href="{% url 'account_login' %}">login</a> or <a class="text-purple" href="{% url 'account_signup' %}">register</a> to tell us about your own experience?</p>
+                        {% endif %}
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade my-3">
+                            <div class="carousel-inner">
+                                {% for review in product.reviews.all %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %} text-center">
+                                    <div class="card review-card w-100">
+                                        <div class="card-body d-flex flex-column">
+                                            <div class="my-auto">
+                                                <h5 class="card-title">
+                                                    {% for star in "12345" %}
+                                                        {% if star|add:0 <= review.rating %}
+                                                            <i class="fa-solid fa-star text-warning"></i>
+                                                        {% else %}
+                                                            <i class="fa-solid fa-star text-secondary"></i>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </h5>
+                                                <p class="card-text pt-2 px-5 text-dark">{{ review.comment }}</p>
+                                                <p class="card-text text-dark">{{ review.user }}<br><span class="review-date">{{review.created_date|date:"d/m/Y" }}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev dark-blue" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    {% else %}
+                        {% if user.is_authenticated %}
+                        <p class="text-center">Why not tell us about your own experience by clicking <a href="{% url 'add_review' product.id %}">here</a>?</p>
+                        {% else %}
+                            <p class="text-center">No reviews yet, why not <a href="{% url 'account_login' %}">login</a> or <a href="{% url 'account_signup' %}">register</a> to tell us about your experience?</p>
+                        {% endif %}
+                    {% endif %}
+                    </div>
+                </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
@@ -120,6 +174,16 @@
 
 {% block extra_js %}
 {{ block.super }}
+
+
+
+<script>
+    // Submit review form
+    function submitReviewForm() {
+        document.querySelector('#review-form-submit-btn').click();
+    }
+</script>
+
 
 
 

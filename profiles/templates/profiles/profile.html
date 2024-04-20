@@ -75,7 +75,74 @@
                 </table>
             </div>
      </div>
+     <div class="col-12 mt-4">
+        <hr>
+        <h2 class="dark-blue fs-4">Reviews <span class="ms-5"></h2>
+        <div class="reviews table-responsive">
+            <table class="table table-borderless">
+                <tbody>
+                    {% for review in reviews %}
+                        <tr>
+                            <td colspan="2" class="text-center">You haven't made any reviews yet.</td>
+                        </tr>
+                    
+                            <tr>
+                                <td>
+                                    Product:
+                                </td>
+                                <td>
+                                    <a href="">
+                                        {{ review.product }}
+                                    </a>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td>
+                                        Comment:
+                                    </td>
+                                    <td>
+                                        {{ review.comment }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Rating:
+                                    </td>
+                                    <td>
+                                        <small class="text-muted"><i class="fas fa-star pe-1 text-warning"></i></small>{{ review.rating }} / 5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Date:
+                                    </td>
+                                    <td>
+                                        {{ review.created_date|date:"d/m/Y" }}
+                                    </td>
+                                </tr>
+                                <tr class="review-table-edit-row">
+                                    <td class="align-middle">
+                                        Edit/Delete:
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit-review-modal-{{ review.id }}">
+                                
+                                            Edit
+                                        </button>
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-review-modal-{{ review.id }}">
+                            
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                      
+                                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+    </div>
 {% endblock %}
        
 
