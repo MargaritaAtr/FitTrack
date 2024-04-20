@@ -3,6 +3,20 @@
     overflow-y:auto;
 }
 
+.reviews {
+    max-height: 532px;
+    overflow-y: auto;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.review-table-edit-row {
+    border-bottom: 1px solid rgba(33, 37, 41, 0.3);
+}
+
 #profile-update-form .form-control {
     color: #000;
 }

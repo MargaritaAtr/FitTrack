@@ -16,7 +16,7 @@
             <hr class="w-50 mx-auto mb-3">
         </div>
     </div>
-    <div class="row col-12 col-lg-10 mx-auto">
+    <div class="row col-12 mx-auto">
         <div class="col-12 col-lg-6 mt-4">
             <h2 class="text-dark fs-4 text-md">
                 Default Delivery Information
@@ -31,21 +31,21 @@
             </form>
         </div>
         <div class="col-12 col-lg-6 mt-4">
-            <h2 class="dark fs-4 text-dark">Order History</h2>
+            <h2 class="dark fs-4 text-dark">Order history</h2>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr class="text-purple">
-                            <td>Order Number</td>
-                            <td>Date</td>
-                            <td>Items</td>
+                            <td>Product</td>
+                            <td>Comment</td>
+                            <td>Rating</td>
                             <td>Order Total</td>
                         </tr>
                     </thead>
                     <tbody class="text-light">
                         {% if orders.count == 0 %}
                             <tr>
-                                <td colspan="4" class="text-center">You haven't made any orders yet.</td>
+                                <td colspan="4" class="text-center">You haven't made any reviews yet.</td>
                             </tr>
                         {% else %}
                             {% for order in orders %}
@@ -74,76 +74,69 @@
                     </tbody>
                 </table>
             </div>
-     </div>
-     <div class="col-12 mt-4">
-        <hr>
-        <h2 class="dark-blue fs-4">Reviews <span class="ms-5"></h2>
-        <div class="reviews table-responsive">
-            <table class="table table-borderless">
-                <tbody>
-                    {% for review in reviews %}
-                        <tr>
-                            <td colspan="2" class="text-center">You haven't made any reviews yet.</td>
-                        </tr>
-                    
-                            <tr>
-                                <td>
-                                    Product:
-                                </td>
-                                <td>
-                                    <a href="">
-                                        {{ review.product }}
-                                    </a>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td>
-                                        Comment:
-                                    </td>
-                                    <td>
-                                        {{ review.comment }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Rating:
-                                    </td>
-                                    <td>
-                                        <small class="text-muted"><i class="fas fa-star pe-1 text-warning"></i></small>{{ review.rating }} / 5
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Date:
-                                    </td>
-                                    <td>
-                                        {{ review.created_date|date:"d/m/Y" }}
-                                    </td>
-                                </tr>
-                                <tr class="review-table-edit-row">
-                                    <td class="align-middle">
-                                        Edit/Delete:
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit-review-modal-{{ review.id }}">
-                                
-                                            Edit
-                                        </button>
-                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-review-modal-{{ review.id }}">
-                            
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                      
-                                {% endfor %}
-                </tbody>
-            </table>
         </div>
     </div>
+    <div class="col-12  mt-4">
+        <h2 class="dark fs-4 text-dark">Review History</h2>
+        <div class="order-history table-responsive">
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr class="text-dark">
+                        <td>Product link</td>
+                        <td>Comment</td>
+                        <td>Rating</td>
+                        <td>Date</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody class="text-light">
+                    {% if reviews.count == 0 %}
+                        <tr>
+                            <td colspan="4" class="text-center">You haven't made any orders yet.</td>
+                        </tr>
+                    {% else %}
+                        {% for review in reviews %}
+                            <tr>
+                                <td>
+                                    <a class="text-purple" href ="{% url 'product_detail' review.product.id %}">
+                                        {{ review.product.name }}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{ review.comment }}
+                                </td>
+                                <td>
+                                    {{ review.created_date|date:"d/m/Y" }}
+                                </td>
+                                <td>
+                                    <small class="text-muted"><i class="fas fa-star pe-1 text-warning"></i></small>{{ review.rating }} / 5
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit-review-modal-{{ review.id }}">
+                                    
+                                        Edit
+                                    </button>
+                                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-review-modal-{{ review.id }}">
+                        
+                                        Delete
+                                    </button>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
 </div>
-    </div>
+
 {% endblock %}
+
+
        
 
 
