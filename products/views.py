@@ -166,7 +166,24 @@ def add_review(request, product_id):
             messages.error(request, 'Failed to add review. Please try again.')
     else:
         form = ReviewForm(request.user, product)
-    print("hello I am add_review view")
     return render(request, 'products/review.html', {'form': form, 'product': product})
 
 
+
+def edit_review(request, review_id):
+    """ Edit a review """
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.user, product, request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review successfully updated!')
+            return redirect('product_detail', product_id=product.id)
+        else:
+            messages.error(request, 'Failed to update review. Please correct the errors.')
+    else:
+        form = ReviewForm(request.user, product, instance=review)
+
+    return render(request, 'products/edit_review.html', {'form': form, 'product': product, 'review': review})
