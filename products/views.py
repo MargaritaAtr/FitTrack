@@ -150,8 +150,17 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def add_review(request, product_id):
     """ Add a review to a product """
+    # Check if the user is authenticated
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'Sorry, only registered users can do that. Please login or register to delete a review.'
+        )
+        return redirect('home')  # Redirect to the home page if the user is not authenticated
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ReviewForm(request.user, product, request.POST)
@@ -170,8 +179,17 @@ def add_review(request, product_id):
 
 
 
+@login_required
 def edit_review(request, review_id):
     """ Edit a review """
+    # Check if the user is authenticated
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'Sorry, only registered users can do that. Please login or register to delete a review.'
+        )
+        return redirect('home')  # Redirect to the home page if the user is not authenticated
+
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
 
@@ -187,3 +205,28 @@ def edit_review(request, review_id):
         form = ReviewForm(request.user, product, instance=review)
 
     return render(request, 'products/edit_review.html', {'form': form, 'product': product, 'review': review})
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete a review """
+
+    # Check if the user is authenticated
+    if not request.user.is_authenticated:
+        messages.error(
+            request,
+            'Sorry, only registered users can do that. Please login or register to delete a review.'
+        )
+        return redirect('home')  # Redirect to the home page if the user is not authenticated
+
+    # Retrieve the review or return a 404 error if not found
+    review = get_object_or_404(Review, pk=review_id)
+
+    if request.method == 'POST':
+        # Delete the review
+        review.delete()
+        messages.success(request, 'Review successfully deleted!')
+    
+    # Redirect the user back to an appropriate page
+    # For example, you can redirect them back to the product detail page
+    return redirect('profile')  # Redirect to the profile page after deletion
