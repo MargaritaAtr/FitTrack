@@ -10,7 +10,7 @@
             </div>
             <hr class="mt-1 mb-3">
         </div>
-        {% if grand_total  %}
+        {% if grand_total and not on_profile_page %}
             <p class="text-black py-1">Your Bag ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}
@@ -19,7 +19,7 @@
                             {% if item.product.image %}
                                 <img class="product-detail-img w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                             {% else %}
-                                <img class="product-detail-img w-100" src="{{ MEDIA_URL }}noimage.webp" alt="{{ item.product.name }}">
+                                <img class="product-detail-img w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.product.name }}">
                             {% endif %}
                         </div>
                         <div class="col-9">
