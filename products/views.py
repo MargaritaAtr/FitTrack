@@ -227,6 +227,4 @@ def delete_review(request, review_id):
         review.delete()
         messages.success(request, 'Review successfully deleted!')
     
-    # Redirect the user back to an appropriate page
-    # For example, you can redirect them back to the product detail page
     return redirect('profile')  # Redirect to the profile page after deletion
