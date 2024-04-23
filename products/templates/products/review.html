@@ -13,16 +13,18 @@
             <hr class="w-50 mx-auto mb-3">
         </div>
     </div>
-    <div class="row col-6 col-md-6 mx-auto">
+    <div class="row justify-content-center">
+    <div class="col-12 col-md-6 mx-auto">
         <form method="post" action="{% url 'add_review' product_id=product.id %}">
             
             <h4 class="mb-0 text-urple "> Review for " {{ product.name }}"</h4>
             <hr>
             {% csrf_token %}
             {{ form.as_p }}
-            <button class=" btn btn-dark rounded" type="submit">Submit Review </button>
-            <a class="btn btn-light rounded" href="{% url 'product_detail' product.id %}">Cancel</a>
+            <button class="btn btn-sm btn-dark text-uppercase mobile-btn rounded" type="submit">Submit Review </button>
+            <a class="btn btn-sm text-uppercase btn-light mobile-btn rounded" href="{% url 'product_detail' product.id %}">Cancel</a>
         </form>
+        </div>
     </div>
 </div>
 

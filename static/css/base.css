@@ -124,12 +124,14 @@ h4{
     margin-top:5px;
 }
 
-.shopping-btn {
+.mobile-btn {
     padding: .375rem;
     font-size: .75rem;
     margin: 5px;
     
 }
-
+.btn  {
+    cursor:pointer;
+}
 
 }

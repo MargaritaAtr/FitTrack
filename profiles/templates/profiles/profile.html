@@ -1,7 +1,6 @@
 {% extends "base.html"%}
 {% load static %}
 
-
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
@@ -24,8 +23,8 @@
             <form id="profile-update-form" class="mt-3" action="{% url 'profile' %}" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-dark text-center mt-2 shopping-button" type="submit">
-                    <i class="fa-solid fa-circle-info pe-2"></i>                                         
+                <button class="btn btn-dark text-center mt-2 shopping-btn" type="submit">
+                    <i class="fa-solid fa-circle-info pe-2"></i>
                     Update Information
                 </button>
             </form>
@@ -36,103 +35,175 @@
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr class="text-purple">
-                            <td>Product</td>
-                            <td>Comment</td>
-                            <td>Rating</td>
-                            <td>Order Total</td>
+                            <td>Order</td>
+                            <td>Date</td>
+                            <td>Details</td>
+                            <td>Total</td>
                         </tr>
                     </thead>
                     <tbody class="text-light">
                         {% if orders.count == 0 %}
-                            <tr>
-                                <td colspan="4" class="text-center">You haven't made any reviews yet.</td>
-                            </tr>
+                        <tr>
+                            <td colspan="4" class="text-center">You haven't made any reviews yet.</td>
+                        </tr>
                         {% else %}
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a class="text-light" href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                        {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date|date:"d/m/Y" }}</td>
-                                    <td>
-                                        <ul class="list-unstyled ">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small ">
-                                                    Size {{ item.product.size|upper }} 
-                                                    {{ item.product.name }} x {{ item.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>£{{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                            {% endif %}
+                        {% for order in orders %}
+                        <tr>
+                            <td>
+                                <a class="text-light" href="{% url 'order_history' order.order_number %}"
+                                    title="{{ order.order_number }}">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td>{{ order.date|date:"d/m/Y" }}</td>
+                            <td>
+                                <ul class="list-unstyled ">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small ">
+                                        Size {{ item.product.size|upper }}
+                                        {{ item.product.name }} x {{ item.quantity }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>£{{ order.grand_total }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <div class="col-12  mt-4">
-        <h2 class="dark fs-4 text-dark">Review History</h2>
-        <div class="order-history table-responsive">
-            <table class="table table-sm table-borderless">
-                <thead>
-                    <tr class="text-dark">
-                        <td>Product link</td>
-                        <td>Comment</td>
-                        <td>Rating</td>
-                        <td>Date</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody class="text-light">
-                    {% if reviews.count == 0 %}
-                        <tr>
-                            <td colspan="4" class="text-center">You haven't made any orders yet.</td>
+    <div class="row mt-3">
+        <div class="col text-left">
+            {% if reviews %}
+            <div class="d-block d-md-none">
+                <div class="col-12 mt-4">
+                    <hr>
+                    <h2 class="dark fs-4">Reviews <span class="ms-5"></span></h2>
+                    <div class="reviews table-responsive">
+                        <table class="table table-borderless">
+                            <tbody class="text-light">
+                                {% if reviews.count == 0 %}
+                                <tr>
+                                    <td colspan="2" class="text-center">You haven't made any reviews yet.</td>
+                                </tr>
+                                {% else %}
+                                {% for review in reviews %}
+                                <tr>
+                                    <td class="text-dark">Product link:</td>
+                                    <td>
+                                        <a class="text-purple" href="{% url 'product_detail' review.product.id %}">
+                                            {{ review.product.name }}
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-dark">Comment:</td>
+                                    <td>{{ review.comment }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-dark">Date:</td>
+                                    <td>{{ review.created_date|date:"d/m/Y" }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-dark">Rating:</td>
+                                    <td>
+                                        <small class="text-muted"><i class="fas fa-star pe-1 text-warning"></i></small>{{ review.rating }} / 5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-dark">Edit:</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="{% url 'edit_review' review.id %}">Edit Review</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-dark">Delete:</td>
+                                    <td>
+                                        <form method="post" action="{% url 'delete_review' review.id %}">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-danger ">Delete Review</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><hr></td> <!-- Add <hr> after each review -->
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if reviews %}
+    <div class="row mt-3 d-none d-md-block">
+        <div class="col text-left">
+            <h2 class="dark fs-4 text-dark">Review History</h2>
+            <div class="order-history table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr class="text-dark">
+                            <td>Product link</td>
+                            <td>Comment</td>
+                            <td>Date</td>
+                            <td>Rating</td>
+                            <td>Actions</td>
+                            <td> </td>
                         </tr>
-                    {% else %}
+                    </thead>
+                    <tbody class="text-light">
+                        {% if reviews.count == 0 %}
+                        <tr>
+                            <td colspan="5" class="text-center">You haven't made any orders yet.</td>
+                        </tr>
+                        {% else %}
                         {% for review in reviews %}
-                            <tr>
-                                <td>
-                                    <a class="text-purple" href ="{% url 'product_detail' review.product.id %}">
-                                        {{ review.product.name }}
-                                    </a>
-                                </td>
-                                <td>
-                                    {{ review.comment }}
-                                </td>
-                                <td>
-                                    {{ review.created_date|date:"d/m/Y" }}
-                                </td>
-                                <td>
-                                    <small class="text-muted"><i class="fas fa-star pe-1 text-warning"></i></small>{{ review.rating }} / 5
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="{% url 'edit_review' review.id %}">Edit Review</a>
-                                </td>
-                                <td>
-                                    <form method="post" action="{% url 'delete_review' review.id %}">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-sm btn-danger">Delete Review</button>
-                                    </form>
-                                </td>
-                            </tr>
-
+                        <tr>
+                            <td>
+                                <a class="text-purple" href="{% url 'product_detail' review.product.id %}">
+                                    {{ review.product.name }}
+                                </a>
+                            </td>
+                            <td>{{ review.comment }}</td>
+                            <td>{{ review.created_date|date:"d/m/Y" }}</td>
+                            <td>
+                                <small class="text-muted"><i class="fas fa-star pe-1 text-warning"></i></small>{{ review.rating }} / 5
+                            </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="{% url 'edit_review' review.id %}">Edit Review</a>
+                            </td>
+                            <td>
+                                <form method="post" action="{% url 'delete_review' review.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete Review</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><hr></td> <!-- Add <hr> after each review -->
+                        </tr>
                         {% endfor %}
                         {% endif %}
-                        <hr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </div> 
+    </div>
+    {% endif %}
 </div>
-
 {% endblock %}
+
 
 
        
