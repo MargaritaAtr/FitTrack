@@ -1,0 +1,8 @@
+{% load bag_tools %}
+
+{% if item.product.special_price %}
+<p class="my-0"><strong class="text-dark">Was: </strong><span class="text-decoration-line-through">£{{ item.product.price }}</span></p>
+<p class="my-0"><strong class="text-dark">Now: </strong><span class="text-danger">£{{ item.product.special_price }}</span></p>
+{% else %}
+<p class="my-0">£{{ item.product.price }}</p>
+{% endif %}

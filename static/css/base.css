@@ -115,8 +115,21 @@ h4{
     }
    }
 
+
 @media (max-width: 990px) {
  .banner-container{
     margin-top: 3rem;
  }
+.btn-dark{
+    margin-top:5px;
+}
+
+.shopping-btn {
+    padding: .375rem;
+    font-size: .75rem;
+    margin: 5px;
+    
+}
+
+
 }
