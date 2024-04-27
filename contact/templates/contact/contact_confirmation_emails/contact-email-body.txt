@@ -1,13 +1,12 @@
-Subject: New Customer Enquiry
+Hello {{ contact.name }}
 
-Hello,
+Here,s a confirmation of the message you sent to us at Fit Track:
 
-We've received a new enquiry from a customer:
+Subject: {{contact.subject }}
+Message: {{contact.content}}
 
-Customer Name: {{ name }}
-Customer Email: {{ email }}
-Message:
-{{ message }}
+We appreciate your message and want to assure you that we'll respond within 48 hours. If your inquiry is urgent, please feel free to reach out to us by phone 074672071993.
 
 Best regards,
 
+Fit Track team
