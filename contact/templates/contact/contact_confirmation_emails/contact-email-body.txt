@@ -1,6 +1,6 @@
 Hello {{ contact.name }}
 
-Here,s a confirmation of the message you sent to us at Fit Track:
+Here is a confirmation of the message you sent to us at Fit Track:
 
 Subject: {{contact.subject }}
 Message: {{contact.content}}
@@ -9,4 +9,4 @@ We appreciate your message and want to assure you that we'll respond within 48 h
 
 Best regards,
 
-Fit Track team
+Fit Track team.

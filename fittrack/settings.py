@@ -14,6 +14,12 @@ import dj_database_url
 from pathlib import Path
 from decimal import Decimal
 
+if os.path.exists('env.py'):
+    try:
+        import env
+        print("Successfully imported env.py")
+    except Exception as e:
+        print("Failed to import env.py:", e)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +32,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['fit-track-0314c0bbcc52.herokuapp.com', '127.0.0.1']
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 # Application definition
 
@@ -107,7 +112,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True

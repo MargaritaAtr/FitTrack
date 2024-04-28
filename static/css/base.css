@@ -82,6 +82,9 @@ h4{
     overflow-x: hidden;
     overflow-y: auto;
 }
+.btn {
+    margin-top: 10px;
+}
 /* Allauth form formatting */
 
 

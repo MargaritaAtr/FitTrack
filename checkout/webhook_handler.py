@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 import json
 import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -52,7 +53,8 @@ class StripeWH_Handler:
 
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
-        intent.latest_charge)
+            intent.latest_charge
+        )
 
         billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
@@ -87,6 +89,7 @@ class StripeWH_Handler:
 
         order_exists = False
         attempt = 1
+        print("CODE CHECK DEBUG")
         while attempt <= 5:
             try:
                 order = Order.objects.get(
