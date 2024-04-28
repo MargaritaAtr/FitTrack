@@ -60,7 +60,6 @@
                                 <ul class="list-unstyled ">
                                     {% for item in order.lineitems.all %}
                                     <li class="small ">
-                                        Size {{ item.product.size|upper }}
                                         {{ item.product.name }} x {{ item.quantity }}
                                     </li>
                                     {% endfor %}
@@ -129,7 +128,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><hr></td> <!-- Add <hr> after each review -->
+                                    <td colspan="2"><hr></td> 
                                 </tr>
                                 {% endfor %}
                                 {% endif %}
@@ -158,8 +157,8 @@
                             <td>Comment</td>
                             <td>Date</td>
                             <td>Rating</td>
-                            <td>Actions</td>
-                            <td> </td>
+                            <td>Edit</td>
+                            <td>Delete </td>
                         </tr>
                     </thead>
                     <tbody class="text-light">
@@ -191,7 +190,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="6"><hr></td> <!-- Add <hr> after each review -->
+                            <td colspan="6"><hr></td> 
                         </tr>
                         {% endfor %}
                         {% endif %}
