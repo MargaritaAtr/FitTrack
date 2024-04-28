@@ -9,7 +9,7 @@ Functionality-wise, Fit Track provides essential features such as product purcha
 The website is live and the link can be fund [Here](https://fit-track-0314c0bbcc52.herokuapp.com/)
 <br>
 
-![Alt text](/media/readme/responsive.png)
+![Alt text](/docs/readme/responsive.png)
 
 ## `Table of Contents`
 
@@ -109,9 +109,9 @@ The Fit Track e-commerce website caters to both Pilates and running enthusiasts,
 
 # `Design`
 
-## Color scheme
+## `Colour scheme:` 
 
-![Alt text](/media/readme/colors.png)
+![Alt text](/docs/readme/colors.png)
 
 The main color scheme utilizes a blend of black, grey, and white to create a striking contrast. Vibrant hues like deep purple are reserved for links and headers, adding emphasis. Strategic splashes of blue and red adorn buttons for actions like editing and deleting reviews, while blue tags denote new items and red tags highlight special prices. This thoughtful use of color ensures key elements catch the eye and engage users effectively.
 
@@ -145,7 +145,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |Mobile View                                |
 |--------------------------------------------|--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/Navigation.png">    | <img src="media/readme/hamburger.png">     | <img src="media/readme/nav-mobile.png">     |
+| <img src="docs/readme/Navigation.png">    | <img src="docs/readme/hamburger.png">     | <img src="docs/readme/nav-mobile.png">     |
 
 
 
@@ -155,7 +155,7 @@ All pages are fully responsive across all screen sizes.
 
 | Non-user navigation view                               | User navigation view                              |Super user navigation view                              |
 |--------------------------------------------|--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/non-user.png">    | <img src="media/readme/user.png">     |<img src="media/readme/super-user.png">  |
+| <img src="docs/readme/non-user.png">    | <img src="docs/readme/user.png">     |<img src="docs/readme/super-user.png">  |
 
 * For first-time visitors, the navigation view remains largely consistent, with the exception of the "Account" link, which offers options to register or sign in, depending on their preference.
 * Account holders have access to their personalized profile page, where they can conveniently store their delivery information and review their order and review history.
@@ -165,7 +165,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/sign-up-page.png">      | <img src="media/readme/sign-up-mobile.png">     |
+| <img src="docs/readme/sign-up-page.png">      | <img src="docs/readme/sign-up-mobile.png">     |
 
 * The sign-up form prompts users who already have an account to sign in instead, providing both a text link  them to the login page.
 * The Sign-Up form requests users to input their email address, ensuring its uniqueness to their account. Additionally, users are prompted to select a username, which must also be unique to their account.
@@ -175,7 +175,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/signin-desk.png">      | <img src="media/readme/sign-in-mob.png">     |
+| <img src="docs/readme/signin-desk.png">      | <img src="docs/readme/sign-in-mob.png">     |
 
 * The Sign  page enables registered users to access their existing accounts by logging in.
 * The Sign-In page encourages users without an account to register first before attempting to log in, offering a text link to the Sign-Up page.
@@ -186,7 +186,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/pass-reset-desk.png">      | <img src="media/readme/pass-rest-mob.png">     |
+| <img src="docs/readme/pass-reset-desk.png">      | <img src="docs/readme/pass-rest-mob.png">     |
 
 * Django provides built-in password reset functionality, allowing users to click a link if they forgot their password. This directs them to a page where they can enter their email address. An email containing a link to reset their password is then sent to the specified email address.
 
@@ -194,7 +194,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/all-prod-desk.png">      | <img src="media/readme/products-mob.png">     |
+| <img src="docs/readme/all-prod-desk.png">      | <img src="docs/readme/products-mob.png">     |
 
 * The All Products view page displays all available products for sale, enabling users to browse through the entire selection. Users can filter products by category and sort them by price, alphabetized name, or alphabetized category, enhancing their browsing experience.
 * Selecting any category button redirects the user to a page showcasing only products matching their selection. Additionally, the 'Sort by...' box provides users with the option to arrange products from low to high based on price.
@@ -205,7 +205,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/prod-detail.png">      | <img src="media/readme/prod-detail-mob.png">     |
+| <img src="docs/readme/prod-detail.png">      | <img src="docs/readme/prod-detail-mob.png">     |
 
 * Users access the Product Detail page by clicking on the title or image of a product from the All Products page.
 * The Product Detail page presents the product image, title, price, tags, full description, and availability of any reviews for the product.
@@ -216,7 +216,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/review-page.png">      | <img src="media/readme/review-mob.png">     |
+| <img src="docs/readme/review-page.png">      | <img src="docs/readme/review-mob.png">     |
 
 * Users can access the Review form page from the Product Detail page by clicking on the provided link located above the review messages.
 * Users can select a rating from 1 to 5 and provide a brief comment about their experience on the Review form page.
@@ -227,7 +227,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/profile.png">      | <img src="media/readme/profile-mob.png">     |
+| <img src="docs/readme/profile.png">      | <img src="docs/readme/profile-mob.png">     |
 
 
 * A user profile page provides users with the capability to view and update their default delivery information.
@@ -238,7 +238,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/bag-view.png">      | <img src="media/readme/bag-mob.png">     |
+| <img src="docs/readme/bag-view.png">      | <img src="docs/readme/bag-mob.png">     |
 
 * To access the Shopping Bag view, users click on the bag icon in the navbar. This page displays the current contents of the bag, including product information.
 * If the bag is empty, a message stating 'Your bag is empty' will be displayed, accompanied by a button encouraging users to continue shopping.
@@ -251,7 +251,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Mobile View                                |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/checkout.png">      | <img src="media/readme/checkout-mob.png">     |
+| <img src="docs/readme/checkout.png">      | <img src="docs/readme/checkout-mob.png">     |
 
 * The checkout page initially presents an order summary before prompting users to fill out the necessary details, including delivery and payment information, to complete their order.
 * The checkout form includes fields for Full Name, Email Address, Phone Number, Street Address, Town or City, Post Code and country.
@@ -265,7 +265,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Email view                               |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/">      | <img src="media/readme/">     |
+| <img src="docs/readme/order-conf.png">      | <img src="docs/readme/email-conf.png">     |
 
 * The page confirms that the order has been successfully processed and informs the user of the email address to which their confirmation will be sent.
 * The same confirmation will be sent to the email address indicated in the form.
@@ -276,7 +276,7 @@ All pages are fully responsive across all screen sizes.
 
 | Desktop View                               | Email view                               |
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/contact.png">      | <img src="media/readme/contact-email.png">     |
+| <img src="docs/readme/contact.png">      | <img src="docs/readme/contact-email.png">     |
 
 * The Contact form is accessible whether a user is logged in or not via the "Contact" icon in the navigation bar.
 * The form prompts users to fill in their name, email, subject line, and message. Below the form, a button is provided to allow users to submit their message.
@@ -287,6 +287,19 @@ All pages are fully responsive across all screen sizes.
 
 | Success                             | Alter                              | 
 |--------------------------------------------|--------------------------------------------|
-| <img src="media/readme/success.png">      | <img src="media/readme/alert.png">     |
+| <img src="docs/readme/success.png">      | <img src="docs/readme/alert.png">     |
 
 * Various messages appear in the right corner, depending on the context of the message. These messages could signify success, alert, or warning.
+
+# `Future Features`
+
+
+Given additional time, there are several features I would like to implement to enhance the project's functionality and user experience:
+
+* Implement a wishlist feature for users to save their favorite products.
+* Introduce a feature allowing users to request email notifications when their favorite products are back in stock.
+* Incorporate a stock availability feature to display the remaining stock of an item to users.
+* Develop a stock count feature that notifies site managers and admins via email when the stock of an item is running low.
+
+# `Testing`
+
