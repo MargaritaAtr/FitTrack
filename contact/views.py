@@ -34,13 +34,16 @@ def contact_us(request):
             )
             messages.success(
                 request,
-                "Thank you for sending us a message. We aim to respond within 48 hours."
+                "Thank you for sending us a message."
+                "We aim to respond within 48 hours."
             )
             return redirect(reverse("home"))
         else:
             messages.error(
                 request,
-                "Your message couldn't be sent. Please check all information in the form and try again. Thank you."
+                "Your message couldn't be sent."
+                "Please check all information in the form and try again."
+                "Thank you."
             )
     else:
         form = ContactForm()

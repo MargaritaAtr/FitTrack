@@ -4,14 +4,12 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 
-
 def bag_contents(request):
     # Initialize variables
     bag_items = []
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-    
 
     # Calculate total and product count based on bag items
     for item_id, item_data in bag.items():
@@ -45,7 +43,6 @@ def bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-
 
     # Calculate grand total
     grand_total = delivery + total

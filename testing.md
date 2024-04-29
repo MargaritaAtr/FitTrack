@@ -138,3 +138,90 @@
 
 ![Alt text](docs/validation-images/js-validator.png)
 </details>
+<br>
+
+## CI Python Linter
+
+<details>
+<summary> Bag Contexts.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/bag-content.png)
+</details>
+
+<details>
+<summary> Bag url.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/bar-url.png)
+</details>
+
+<details>
+<summary> Bag views.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/bag-view.png)
+</details>
+
+<details>
+<summary> Checkout admin.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/checkout-admin.png)
+</details>
+
+<details>
+<summary> Checkout forms.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/checkout-form.png)
+</details>
+
+<details>
+<summary> Checkout models.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/checkout-model.png)
+</details>
+
+<details>
+<summary> Checkout views.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/checkout-view.png)
+</details>
+
+<details>
+<summary> Checkout webhook_handler.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/webhook-handler.png)
+</details>
+<details>
+<summary> Checkout webhooks.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/webhook.png)
+</details>
+
+</details>
+<details>
+<summary> Contact forms.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/contact-form.png)
+</details>
+
+<details>
+<summary> Contact models.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/contact-model.png)
+</details>
+
+<details>
+<summary> Contact views.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/contact-view.png)
+</details>
