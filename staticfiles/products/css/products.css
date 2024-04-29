@@ -1,0 +1,13 @@
+/* Reviews */
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.review-card {
+    min-height: 305px;
+}
+
+.review-date {
+    font-size: 0.8rem;
+}

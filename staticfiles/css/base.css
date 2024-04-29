@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Bitter:wght@200&family=Playfair+Display&display=swap');
+
+
+/***** Main Styling *****/
+html{
+    height:100%;
+}
+
+body{
+    font-family:'Bacasime Antique', serif ;
+    background: url('/media/woman.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.text-container{
+   margin-top:3rem;
+
+}
+
+.banner-container{
+    margin-top: 6rem;
+}
+
+h4{
+    color:rgb(52, 6, 44);
+}
+.cover{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: #555;
+}
+
+.mt-3,.nav-link, p{
+    color:#fff !important;
+}
+
+.text-purple{
+    color: rgb(52, 6, 44) !important;;
+}
+
+.update-link, .remove-item{
+    cursor:pointer;
+}
+
+.message-container{
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+    max-width: 90%;
+}
+
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    z-index: 99999999999;
+    max-width: 90%;
+}
+
+.custom-toast {
+    overflow: visible;
+    
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.bag-notification-wrapper {
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.btn {
+    margin-top: 10px;
+}
+/* Allauth form formatting */
+
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+/* Product Form */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* styling for screen less then 1052px  */
+
+@media (max-width: 1052px) {
+    .banner-container{
+       margin-top: 10rem;
+    }
+   }
+
+
+@media (max-width: 990px) {
+ .banner-container{
+    margin-top: 3rem;
+ }
+.btn-dark{
+    margin-top:5px;
+}
+
+.mobile-btn {
+    padding: .375rem;
+    font-size: .75rem;
+    margin: 5px;
+    
+}
+.btn  {
+    cursor:pointer;
+}
+
+}
