@@ -2,14 +2,16 @@
 <header class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-                <!-- Main Logo  -->
+            <!-- Main Logo -->
             <a class="navbar-brand mx-auto col-lg-3 text-white" href="{% url 'home' %}">Fit Track
             </a>
-            <div class="offcanvas offcanvas-end bg-dark " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header ">
-                    <div class="offcanvas-title " id="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end bg-dark " tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <div class="offcanvas-title" id="offcanvasNavbarLabel">
                     </div>
-                    <button type="button" class="btn-close dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close dark" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <!-- Search Bar -->
@@ -33,47 +35,61 @@
                             <ul class="navbar-nav text-center d-flex align-items-center justify-content-center pt-1">
                                 <!-- All products dropdown -->
                                 <li class="nav-item dropdown px-xl-2">
-                                    <a class="nav-link " href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         All Products
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                                        <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                                        <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By
+                                            Price</a>
+                                        <a href="{% url 'products' %}?sort=category&direction=asc"
+                                            class="dropdown-item">By Category</a>
                                         <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                                     </div>
                                 </li>
                                 <!-- Yoga essentials dropdown -->
                                 <li class="nav-item dropdown px-xl-2">
-                                    <a class="nav-link" href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link" href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         Pilates Essentials
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="{% url 'products' %}?category=pilates_clothing" class="dropdown-item">Clothing</a>
-                                        <a href="{% url 'products' %}?category=pilates_accessories" class="dropdown-item ">Accessories</a>
-                                        <a href="{% url 'products' %}?category=pilates_accessories,pilates_clothing" class="dropdown-item ">All Essentials</a>
+                                        <a href="{% url 'products' %}?category=pilates_clothing"
+                                            class="dropdown-item">Clothing</a>
+                                        <a href="{% url 'products' %}?category=pilates_accessories"
+                                            class="dropdown-item">Accessories</a>
+                                        <a href="{% url 'products' %}?category=pilates_accessories,pilates_clothing"
+                                            class="dropdown-item">All Essentials</a>
                                     </div>
                                 </li>
                                 <!-- Outdoor running dropdown -->
                                 <li class="nav-item dropdown px-xl-2">
-                                    <a class="nav-link" href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link" href="#" id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         Outdoor Running
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="{% url 'products' %}?category=running_clothing" class="dropdown-item">Clothing</a>
-                                        <a href="{% url 'products' %}?category=footwear"  class="dropdown-item ">Footwear</a>
-                                        <a href="{% url 'products' %}?category=running_accessories" class="dropdown-item ">Running Accessories</a>
-                                        <a href="{% url 'products' %}?category=running_clothing,footwear,running_accessories"  class="dropdown-item ">All Essentials</a>
+                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton3">
+                                        <a href="{% url 'products' %}?category=running_clothing"
+                                            class="dropdown-item">Clothing</a>
+                                        <a href="{% url 'products' %}?category=footwear"
+                                            class="dropdown-item">Footwear</a>
+                                        <a href="{% url 'products' %}?category=running_accessories"
+                                            class="dropdown-item">Running Accessories</a>
+                                        <a href="{% url 'products' %}?category=running_clothing,footwear,running_accessories"
+                                            class="dropdown-item">All Essentials</a>
                                     </div>
                                 </li>
                                 <!-- Special offers dropdown -->
                                 <li class="nav-item dropdown px-xl-2">
-                                    <a class="nav-link" href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link" href="#" id="dropdownMenuButton4" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                         Special Offers
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                        <a href="{% url 'products' %}?new" class="dropdown-item ">New Arrivals</a>
-                                        <a href="{% url 'products' %}?on_sale" class="dropdown-item ">Special price</a>
-                                        <a href="{% url 'products' %}?all_specials" class="dropdown-item ">All Specials</a>
+                                    <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton4">
+                                        <a href="{% url 'products' %}?new" class="dropdown-item">New Arrivals</a>
+                                        <a href="{% url 'products' %}?on_sale" class="dropdown-item">Special price</a>
+                                        <a href="{% url 'products' %}?all_specials" class="dropdown-item">All
+                                            Specials</a>
                                     </div>
                                 </li>
                             </ul>
@@ -83,22 +99,23 @@
                     <div class="col-12 col-lg-4 py-1 py-lg-0">
                         <ul class="list-inline list-unstyled text-center text-lg-right bg-dark">
                             <li class="list-inline-item dropdown account-and-bag">
-                                <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <div class="text-center white">
-                                        <div><i class="fas fa-user fa-lg icon "></i></div>
+                                        <div><i class="fas fa-user fa-lg icon"></i></div>
                                         <p class="my-0 text-white">Account</p>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-dark border-0" aria-labelledby="user-options">
                                     {% if request.user.is_authenticated %}
-                                        {% if request.user.is_superuser %}
-                                            <a href="{% url 'add_product' %}" class="dropdown-item ">Product Management</a>
-                                        {% endif %}
-                                        <a href="{% url 'profile' %}" class="dropdown-item ">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item ">Sign Out</a>
+                                    {% if request.user.is_superuser %}
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
                                     {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item ">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item ">Sign In</a>
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                                     {% endif %}
                                 </div>
                             </li>
@@ -108,9 +125,9 @@
                                         <div><i class="fas fa-shopping-bag fa-lg icon"></i></div>
                                         <p class="my-0 text-white">
                                             {% if grand_total %}
-                                                <span class="light-blue">£{{ grand_total|floatformat:2 }}</span>
+                                            <span class="light-blue">£{{ grand_total|floatformat:2 }}</span>
                                             {% else %}
-                                                £0.00
+                                            £0.00
                                             {% endif %}
                                         </p>
                                     </div>
@@ -120,10 +137,7 @@
                                 <a class="nav-link" href="{% url 'contact_us' %}">
                                     <div class="text-center">
                                         <div><i class="fas fa-envelope fa-lg icon"></i></div>
-                                        <p class="my-0 text-white">
-                                            Contact
-                                        </p>
-                            
+                                        <p class="my-0 text-white">Contact</p>
                                     </div>
                                 </a>
                             </li>
@@ -131,16 +145,15 @@
                     </div>
                 </div>
             </div>
-            <button class="navbar-toggler position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Open Menu">
+            <button class="navbar-toggler position-relative" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Open Menu">
                 {% if grand_total %}
-                    <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary mt-1 py-2">
-                        <i class="fas fa-shopping-bag fa-lg"></i>
-                    </span>
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-primary mt-1 py-2">
+                    <i class="fas fa-shopping-bag fa-lg"></i>
+                </span>
                 {% endif %}
                 <span class="navbar-toggler-icon"></span>
             </button>
-        </div>   
-    </nav> 
+        </div>
+    </nav>
 </header>
-    
-

@@ -3,179 +3,185 @@
 
 {% block extra_css %}
 {{ block.super }}
-    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="cover text-white"></div>
-    <div class="container-fluid"> 
-        {% include 'includes/banner.html'%}
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                </div>
-                <!-- Review carousel -->
-                <div class="col-12">
-                    {% if product.reviews.all|length > 0 %}
-                        {% if user.is_authenticated %}
-                        <p class="text-center">Why not tell us about your own experience by clicking <a href="{% url 'add_review' product.id %}">here</a>?</p>
-                            {% else %}
-                            <p class="text-center">Why not <a class="text-purple" href="{% url 'account_login' %}">login</a> or <a class="text-purple" href="{% url 'account_signup' %}">register</a> to tell us about your own experience?</p>
-                        {% endif %}
-                        <div id="carouselExampleFade" class="carousel slide carousel-fade my-3">
-                            <div class="carousel-inner">
-                                {% for review in product.reviews.all %}
-                                <div class="carousel-item {% if forloop.first %}active{% endif %} text-center">
-                                    <div class="card review-card w-100">
-                                        <div class="card-body d-flex flex-column">
-                                            <div class="my-auto">
-                                                <h5 class="card-title">
-                                                    {% for star in "12345" %}
-                                                        {% if star|add:0 <= review.rating %}
-                                                            <i class="fa-solid fa-star text-warning"></i>
-                                                        {% else %}
-                                                            <i class="fa-solid fa-star text-secondary"></i>
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                </h5>
-                                                <p class="card-text pt-2 px-5 text-dark">{{ review.comment }}</p>
-                                                <p class="card-text text-dark">{{ review.user }}<br><span class="review-date">{{review.created_date|date:"d/m/Y" }}</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                            <button class="carousel-control-prev dark-blue" type="button" data-bs-target="#carouselExampleFade"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    {% else %}
-                        {% if user.is_authenticated %}
-                        <p class="text-center">Why not tell us about your own experience by clicking <a href="{% url 'add_review' product.id %}">here</a>?</p>
-                        {% else %}
-                            <p class="text-center">No reviews yet, why not <a href="{% url 'account_login' %}">login</a> or <a href="{% url 'account_signup' %}">register</a> to tell us about your experience?</p>
-                        {% endif %}
-                    {% endif %}
-                    </div>
-                </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
-                    {% if product.special_price > 0 %}
-                    <span class="font-weight-bold">
-                        <del class="text-dark">£{{ product.price }}</del>
-                    </span>
-                    <span class="text-danger font-weight-bold">£{{ product.special_price }}</span>
+<div class="cover text-white"></div>
+<div class="container-fluid">
+    {% include 'includes/banner.html'%}
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-container my-5">
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
                 {% else %}
-                    <span class="text-dark">£{{ product.price }}</span>
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                </a>
                 {% endif %}
-                    {% if product.category %}
-                            <p class="small mt-1 mb-0">
-                                <a class="text-dark" href="{% url 'products' %}?category={{ product.category.name }}">
-                                    <i class="fas fa-tag mr-1 bd-primary"></i>{{ product.category.friendly_name }}
-                                </a>
-                            </p>
-                    {% endif %}
-                    {% if product.rating %}
-                        <small class="text-primary"><i class="fas fa-star text-warning"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-primary">No Rating</small>
-                    {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
-                    <p class="mt-3">{{ product.details }}</p>
-                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
-                            {% if product.different_size == True %}
-                                {% if product.category.name == "footwear" %}
-                                    <div class="col-12">
-                                        <p><strong>Size:</strong></p>
-                                        <select class="form-control rounded-0 w-50 form-light" name="product_size" id='id_product_size'>
-                                            <option value="4">4</option>
-                                            <option value="5" selected>5</option>
-                                            <option value="5.5">5.5</option>
-                                            <option value="6">6</option>
-                                            <option value="6.5">6.5</option>
-                                        </select>
-                                    </div>
-                                {% else %}  
-                                    <div class="col-12">
-                                        <p><strong>Size:</strong></p>
-                                        <select class="form-control rounded-0 w-50 form-light" name="product_size" id='id_product_size'>
-                                            <option value="xs">XS</option>
-                                            <option value="s">S</option>
-                                            <option value="m" selected>M</option>
-                                            <option value="l">L</option>
-                                            <option value="xl">XL</option>
-                                        </select>
-                                    </div>
-                                {% endif %}
-                            {% else %}
-                                <div class="col-12">
-                                    <p><strong>Size:</strong></p>
-                                    <select class="form-control rounded-0 w-50 form-light" name="product_size" id='id_product_size'>
-                                        <option value="One">One</option>
-                                    </select>
-                                </div>
-                            {% endif %}
-                        </div>     
-                            <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <div class="input-group">
-                                        <input class="form-control qty_input" type="number" 
-                                        name="quantity" value="1" min="1" max="99" 
-                                        data-item_id="{{ product.id }}" 
-                                        id="id_qty_{{ product.id }}">
-                                      
+            </div>
+            <!-- Review carousel -->
+            <div class="col-12">
+                {% if product.reviews.all|length > 0 %}
+                {% if user.is_authenticated %}
+                <p class="text-center">Why not tell us about your own experience by clicking <a
+                        href="{% url 'add_review' product.id %}">here</a>?</p>
+                {% else %}
+                <p class="text-center">Why not <a class="text-purple" href="{% url 'account_login' %}">login</a> or <a
+                        class="text-purple" href="{% url 'account_signup' %}">register</a> to tell us about your own
+                    experience?</p>
+                {% endif %}
+                <div id="carouselExampleFade" class="carousel slide carousel-fade my-3">
+                    <div class="carousel-inner">
+                        {% for review in product.reviews.all %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %} text-center">
+                            <div class="card review-card w-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="my-auto">
+                                        <h5 class="card-title">
+                                            {% for star in "12345" %}
+                                            {% if star|add:0 <= review.rating %}
+                                            <i class="fa-solid fa-star text-warning"></i>
+                                            {% else %}
+                                            <i class="fa-solid fa-star text-secondary"></i>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </h5>
+                                        <p class="card-text pt-2 px-5 text-dark">{{ review.comment }}</p>
+                                        <p class="card-text text-dark">{{ review.user }}<br><span
+                                                class="review-date">{{review.created_date|date:"d/m/Y" }}</span></p>
                                     </div>
                                 </div>
                             </div>
-                            {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                               <a class="text-purple" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                               <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                               </small>
-                            {% endif %}
-                            <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-light mobile-btn rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase text-purple ">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5 mobile-btn" value="Add to Bag">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                     
                         </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev dark-blue" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+                <p class="text-center">Why not tell us about your own experience by clicking <a
+                        href="{% url 'add_review' product.id %}">here</a>?</p>
+                {% else %}
+                <p class="text-center">No reviews yet, why not <a href="{% url 'account_login' %}">login</a> or <a
+                        href="{% url 'account_signup' %}">register</a> to tell us about your experience?</p>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-details-container mb-5 mt-md-5">
+                <p class="mb-0">{{ product.name }}</p>
+                {% if product.special_price > 0 %}
+                <span class="font-weight-bold">
+                    <del class="text-dark">£{{ product.price }}</del>
+                </span>
+                <span class="text-danger font-weight-bold">£{{ product.special_price }}</span>
+                {% else %}
+                <span class="text-dark">£{{ product.price }}</span>
+                {% endif %}
+                {% if product.category %}
+                <p class="small mt-1 mb-0">
+                    <a class="text-dark" href="{% url 'products' %}?category={{ product.category.name }}">
+                        <i class="fas fa-tag mr-1 bd-primary"></i>{{ product.category.friendly_name }}
+                    </a>
+                </p>
+                {% endif %}
+                {% if product.rating %}
+                <small class="text-primary"><i class="fas fa-star text-warning"></i>{{ product.rating }} / 5</small>
+                {% else %}
+                <small class="text-primary">No Rating</small>
+                {% endif %}
+                <p class="mt-3">{{ product.description }}</p>
+                <p class="mt-3">{{ product.details }}</p>
+                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        {% if product.different_size == True %}
+                        {% if product.category.name == "footwear" %}
+                        <div class="col-12">
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control rounded-0 w-50 form-light" name="product_size"
+                                id='id_product_size'>
+                                <option value="4">4</option>
+                                <option value="5" selected>5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                            </select>
+                        </div>
+                        {% else %}
+                        <div class="col-12">
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control rounded-0 w-50 form-light" name="product_size"
+                                id='id_product_size'>
+                                <option value="xs">XS</option>
+                                <option value="s">S</option>
+                                <option value="m" selected>M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        {% endif %}
+                        {% else %}
+                        <div class="col-12">
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control rounded-0 w-50 form-light" name="product_size"
+                                id='id_product_size'>
+                                <option value="One">One</option>
+                            </select>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-12">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
+                                    max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+
+                            </div>
+                        </div>
+                    </div>
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a class="text-purple" href="{% url 'edit_product' product.id %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
+                    {% endif %}
+                    <div class="col-12">
+                        <a href="{% url 'products' %}" class="btn btn-light mobile-btn rounded-0 mt-5">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase text-purple ">Keep Shopping</span>
+                        </a>
+                        <input type="submit" class="btn btn-dark rounded-0 text-uppercase mt-5 mobile-btn"
+                            value="Add to Bag">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 {% endblock %}
 
 {% block extra_js %}
 {{ block.super }}
-
-
 
 <script>
     // Submit review form
@@ -183,8 +189,5 @@
         document.querySelector('#review-form-submit-btn').click();
     }
 </script>
-
-
-
 
 {% endblock %}

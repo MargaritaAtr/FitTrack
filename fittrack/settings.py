@@ -10,16 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+from dotenv import load_dotenv
 import dj_database_url
 from pathlib import Path
 from decimal import Decimal
 
-if os.path.exists('env.py'):
-    try:
-        import env
-        print("Successfully imported env.py")
-    except Exception as e:
-        print("Failed to import env.py:", e)
+# Load environment variables from .env file
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -182,6 +180,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

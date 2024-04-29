@@ -2,7 +2,7 @@
 
 {% if bag_items %}
     {% if item.product.special_price %}
-    <p class="my-0"><strong class="text-dark"></strong><span class="text-danger">£{{ item.product.special_price | calc_subtotal:item.quantity}}</span></p>
+    <p class="my-0 text-dark"><span class="text-danger">£{{ item.product.special_price | calc_subtotal:item.quantity}}</span></p>
     {% else %}
     <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
     {% endif %}
