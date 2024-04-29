@@ -227,6 +227,47 @@
 </details>
 <br>
 
+# User Story Testing 
+
+## General
+
+| User Story                                                                                | Feature                                                                                                                                    |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| I want to immediately identify the purpose of the site.                                   | The logo prominently displays the app name, accompanied by motivational imagery and a "Shop Now" button for immediate engagement.                                         |
+| I want navigation to be simple and intuitive.                                             | Navigation links are intuitively organized, featuring a right-aligned layout with a hamburger icon for mobile users, adhering to design standards. |
+| I aim to access the website seamlessly on any device.                                        | The website seamlessly adjusts its layout across devices using Bootstrap's grid system, ensuring optimal viewing on any screen size. |Easily recover my password in case I forget it | On the login page a user can click 'Forgot Password' and be brought to a page where they enter their email and are sent a password reset link. 
+| Receive an email confirmation after registering | A user receives an email after submitting the registration form which provides a link for them to confirm their details and formally register their account. |
+
+<br>
+
+## Viewing and Navigation
+
+| User Story                                        | Achievement                                                                   |
+| ------------------------------------------------- | -------------------------------------------------------------------------- |
+| See all the products available                            | Access to all 17 available products.                                                                    |
+| See the individual product details                        | Click on product image or name to view details on a specific product page.                              |
+| See the reviews for products                              | View all available reviews for products.                                                                |                                           |
+| Contact the shop owner and receive confirmation of this  | Submit contact form and receive success message on screen. Also receive confirmation email.             |
+| Sort products by category | Users can sort products by category, including Pilates clothing, accessories, Outdoor running clothing, footwear, accessories, as well as view new products and those with special prices.          |
+| Sort products by list of sortings | Users can sort products by price, rating, name and category aтщг         |
+| Search for products by title or description      | Users can search for products by entering keywords either from the product title or featured in the description. |
+
+
+<br>
+
+## Registration and user profile
+
+| User Story                                        | Achievement                                                                   |
+| ------------------------------------------------- | -------------------------------------------------------------------------- |
+| Login/register to the service                             | Access through links on sign-in page or dropdown in navbar.                                             |
+| Recover my password in case I forget it                   | Click 'Forgot Password' on login page to receive a password reset link via email.                       |
+| Receive an email confirmation after registering           | Upon registration, receive an email with a confirmation link to complete the registration process.     |
+
+<br>
+
+| Make a purchase even if I am not registered              | Purchase products without requiring login to the website.  
+
+
 ## Manual Testing
 
 ### Navigation bar and Homepage
