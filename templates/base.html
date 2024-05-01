@@ -15,12 +15,25 @@
     {% block extra_meta %}
     {% endblock %}
 
+    <!-- Search engine specific Meta Tags & Links -->
+    <meta name="description"
+        content="The website of e-commercial store for Pilates and Running clothes, footwear and accessories">
+    <meta name="keywords" content="pilates,outdoor running,footwear,accessories">
+
     {% block corecss %}
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- FontAwesome Kit -->
     <script src="https://kit.fontawesome.com/9b88342048.js" crossorigin="anonymous"></script>
+    <!-- Internal CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+
     {% endblock %}
 
     {% block extra_css %}
