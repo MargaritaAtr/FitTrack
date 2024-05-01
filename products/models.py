@@ -15,40 +15,45 @@ class Category (models.Model):
 
     def _str_(self):
         return self.name
-    
+
     def get_friendly_name(self):
         return self.friendly_name
 
+
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     different_size = models.BooleanField(default=False)
-    description = models.TextField() 
+    description = models.TextField()
     new = models.BooleanField(default=False)
     on_sale = models.BooleanField(default=False)
     all_specials = models.BooleanField(default=False)
     details = models.CharField(max_length=360)
-    materials = models.CharField(max_length=254, null=True,default=None)
+    materials = models.CharField(max_length=254, null=True, default=None)
     fabric_care = models.CharField(max_length=360)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
+                                 blank=True)
     image = models.ImageField(null=True, blank=True)
     size = models.CharField(max_length=254, null=True, blank=True)
-    weight =  models.CharField(max_length=254, null=True, blank=True)
+    weight = models.CharField(max_length=254, null=True, blank=True)
     special_price = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, blank=False, default=0)
-    
+
     def update_rating(self):
         # Calculate the average rating for the product's reviews
         avg_rating = self.reviews.aggregate(avg_rating=Avg('rating'))['avg_rating']
         if avg_rating is not None:
-            # Update the product's rating field with the calculated average rating
+            # Update the product's rating field with
+            # the calculated average rating
             self.rating = round(avg_rating, 2)
             self.save()
 
     def _str_(self):
         return self.name
+
 
 class Review(models.Model):
     """ The review model for the products app """

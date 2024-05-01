@@ -13,9 +13,6 @@
     * [CI Python Linter](#ci-python-linter)
     * [Lighthouse](#lighthouse)
 * [User Story Testing](#user-story-testing)
-    * [General](#general)
-    * [Logged Out](#logged-out)
-    * [User Logged In](#user-logged-in)
 * [Manual Testing](#manual-testing)
 * [Responsiveness](#responsiveness)
 * [Fixed Bugs](#fixed-bugs)
@@ -84,11 +81,14 @@
 <details>
 <summary>Product detail page </summary>
 <br>
+
 ![Alt text](docs/validation-images/product-detail.png)
 </details>
+
 <details>
 <summary> Contact page </summary>
 <br>
+
 ![Alt text](docs/validation-images/contact.png)
 </details>
 
@@ -141,6 +141,8 @@
 <br>
 
 ## CI Python Linter
+
+* I have checked most of python files and all good fine. 
 
 <details>
 <summary> Bag Contexts.py  </summary>
@@ -225,12 +227,103 @@
 
 ![Alt text](docs/validation-images/contact-view.png)
 </details>
+
+
+<details>
+<summary> Product admin.py  </summary>
 <br>
+
+![Alt text](docs/validation-images/product-admin.png)
+</details>
+
+
+<details>
+<summary> Product forms.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/product-form.png)
+</details>
+
+
+<details>
+<summary> Product models.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/product-models.png)
+</details>
+
+
+<details>
+<summary> Product views.py  </summary>
+<br>
+
+![Alt text](docs/validation-images/product-view.png)
+</details>
+
+<br>
+
+## Lighthouse
+
+<details>
+<summary> Homepage  </summary>
+<br>
+
+![Alt text](docs/validation-images/light-homepage.png)
+</details>
+<br>
+
+<details>
+<summary> Products page  </summary>
+<br>
+
+![Alt text](docs/validation-images/products-light.png)
+</details>
+<br>
+
+<details>
+<summary> Product details page  </summary>
+<br>
+
+![Alt text](docs/validation-images/detail-light.png)
+</details>
+<br>
+
+<details>
+<summary> Product Management page  </summary>
+<br>
+
+![Alt text](docs/validation-images/prod-man-light.png)
+</details>
+<br>
+
+<details>
+<summary> My Profile page </summary>
+<br>
+
+![Alt text](docs/validation-images/profile-light.png)
+</details>
+<br>
+
+<details>
+<summary> Bag page </summary>
+<br>
+
+![Alt text](docs/validation-images/bag-light.png)
+</details>
+<br>
+
+<details>
+<summary> Contact page </summary>
+<br>
+
+![Alt text](docs/validation-images/contact-light.png)
+</details>
+<br>
+
 
 # User Story Testing 
 
-## General
-
+## General. As a user, I want to be able to :
 | User Story                                                                                | Feature                                                                                                                                    |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | I want to immediately identify the purpose of the site.                                   | The logo prominently displays the app name, accompanied by motivational imagery and a "Shop Now" button for immediate engagement.                                         |
@@ -240,7 +333,7 @@
 
 <br>
 
-## Viewing and Navigation
+## Viewing and Navigation . As a shopper, I want to be able to:
 
 | User Story                                        | Achievement                                                                   |
 | ------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -255,7 +348,7 @@
 
 <br>
 
-## Registration and user profile
+## Registration and user profile. As a user, I want to be able to :
 
 | User Story                                        | Achievement                                                                   |
 | ------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -265,12 +358,34 @@
 
 <br>
 
-| Make a purchase even if I am not registered              | Purchase products without requiring login to the website.  
+## Purchasing and checkout. As a shopper, I want to be able to:
+
+| User Story                                                | Achievement                                                                                                              |
+|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Make a purchase even if I am not registered              | Users can purchase products without needing to log in to the website.  |
+| Select the quantity of a product when purchasing it | A quantity selector box is available on the product details page, allowing users to adjust the quantity before adding it to the bag. |
+| View products in my bag to be purchased                   | Users can access their shopping bag by clicking the bag icon in the navbar, where they can view a summary of their order. Additionally, a success message is displayed upon adding an item to the bag. |
+| Adjust the quantity of individual products in my bag       | On the 'Shopping Bag' page, users can utilize the quantity selector to modify and update the quantities of individual products in their order. |
+| Easily enter my payment information                        | Users can conveniently input their delivery information, which can be saved for future use. They can then enter their card details including card number, expiry date, and CVC. |
+| View an order confirmation after checkout                 | Upon completing checkout, users are redirected to a page displaying their order confirmation and summary. This information is also accessible in their Profile's order history section. |
+| Receive an email confirmation after checking out          | Users receive an email confirmation immediately after completing checkout, containing essential details about the order. |
+
+<br>
+
+## Admin and Store management. As a store owner, I want to be able to:
+
+| User Story            | Achievement                                                                                                              |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Add new product       | Superusers can access the product management section from the navbar, where they are redirected to a form to add a new product. |
+| Edit a product details | Users can edit product details by clicking the "Edit" link underneath each product on both the all products and product detail pages. This redirects them to a pre-filled Edit Product form where they can make the necessary changes.  |
+| Delete a product      | Superusers have the ability to delete a product by clicking the "Delete" link underneath each product. Upon clicking, a confirmation message appears confirming the successful deletion.  |
+
+
 
 
 ## Manual Testing
 
-### Navigation bar and Homepage
+## Navigation bar and Homepage
 
 | Feature/Action                                       | Expected Outcome                                                  | Result  |
 |------------------------------------------------------|-------------------------------------------------------------------|---------|
@@ -286,8 +401,9 @@
 | Badge display for shopping bag                      | Badge appears over navbar toggler when bag has items              | Pass    |
 | Mobile navigation behavior identical to full navbar | Mobile navigation links behave the same as full navbar            | Pass    |
 | Sidenav collapses correctly                        | Side navigation collapses on close button or outside navigation   | Pass    |
+ <br>
 
-### Products page
+## Products page
 
 | Feature/Action                                    | Expected Outcome                                         | Result  |
 |---------------------------------------------------|----------------------------------------------------------|---------|
@@ -296,8 +412,9 @@
 | All images are rendered correctly                | Images are displayed without any distortion or errors   | Pass    |
 | Clickable new and special price badges          | Badges lead to respective pages when clicked            | Pass    |
 | Clickable product tags                           | Tags redirect to relevant pages upon clicking           | Pass    |
+ <br>
 
-### Products detail page
+## Products detail page
 
 | Feature/Action                                        | Expected Outcome                                                       | Result  |
 |-------------------------------------------------------|------------------------------------------------------------------------|---------|
@@ -309,8 +426,9 @@
 | Items added to shopping bag with correct message      | Successful addition to bag displays correct success message            | Pass    |
 | "Keep shopping" button redirects to products page     | Clicking on the button navigates back to the products page             | Pass    |
 | Clickable product tags                           | Tags redirect to relevant pages upon clicking           | Pass    |
+ <br>
 
-###  Product Management page
+##  Product Management page
 
 | Feature/Action                    | Expected Outcome                                 | Result  |
 |-----------------------------------|--------------------------------------------------|---------|
@@ -320,8 +438,9 @@
 | Select Image button               | Loads the selected image correctly               | Pass    |
 | Add product button                | Adds product to the database and returns to management page | Pass    |
 | Cancel button                     | Redirects to products page                       | Pass    |
+ <br>
 
-### User Profile Page
+## User Profile Page
 
 | Feature/Action                                               | Expected Outcome                                                                | Result  |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------|---------|
@@ -332,6 +451,7 @@
 | Edit review functionality                                    | Clicking on edit review launches the edit review form                             | Pass    |
 | Edit review form validation and database update              | Edit review form validates input and updates the review in the database           | Pass    |
 | Delete review  button                           | Delete review button deletes the review from the database       | Pass    |
+ <br>
 
 ## Shopping bag page
 
@@ -344,8 +464,9 @@
 | Bag totals update correctly on bag changes          | Bag total, delivery, and grand total update correctly on changes   | Pass    |
 | "Keep shopping" button redirects to products page   | Button navigates back to the products page when clicked            | Pass    |
 | "Checkout" button redirects to checkout page        | Clicking on the checkout button redirects to the checkout page     | Pass    |
+ <br>
 
-###  Contact page
+##  Contact page
 
 | Feature/Action                                      | Expected Outcome                                                           | Result  |
 |-----------------------------------------------------|----------------------------------------------------------------------------|---------|
@@ -353,6 +474,7 @@
 | Confirmation emails sent                          | Both customer and store receive confirmation emails after form submission   | Pass    |
 | Form validation in contact form  | Validate input fields before submission      | Pass    |
 | Cancel button         | Redirects to homepage        | Pass    |
+ <br>
 
 ## Checkout and checkout success pages
 
@@ -370,6 +492,7 @@
 | Success message upon order completion               | User receives a success message confirming the order was successful    | Pass    |
 | Order confirmation email sent to the user           | User receives an order confirmation email                               | Pass    |
 | "Checkout our latest deals" button functionality    | Button redirects user to the all specials page                          | Pass    |
+ <br>
 
 ## Register page
 
@@ -380,6 +503,7 @@
 | Password strength validation                        | Verifies that the password is not too weak                              | Pass    |
 | Non-existence of user with entered details          | Checks that no user with the provided details already exists           | Pass    |
 | Sign up button functionality                        | Creates an account and sends a confirmation email for verification      | Pass    |
+ <br>
 
 ## Sign In page
 
@@ -389,12 +513,14 @@
 | Take me home button functionality                  | Redirects the user back to the home page                                 | Pass    |
 | Forgot password link                                 | Redirects to forgot password page                                | Pass    |
 | Sign up link                                         | Redirects to sign up page                                | Pass    |
-
+ <br>
+ 
 ## Sign Out page
 
 | Feature/Action                                      | Expected Outcome                                                       | Result  |
 |-----------------------------------------------------|------------------------------------------------------------------------|---------|
 | Sign out button functionality                      | Signs the user out and redirects them to the home page with a success message | Pass    |
+ <br> 
 
 ## Reset Password page
 
@@ -404,3 +530,40 @@
 | Clicking on the email link                         | User is prompted to create a new password                               | Pass    |
 | Password validation                                | Validates the new password to ensure previous or weak passwords are not used | Pass    |
 | Password update in database                        | Updates the password in the database for future logins                  | Pass    |
+
+## Browser Compatibility
+
+The site was tested in Google Chrome and Microsoft Edge  on desktop.
+
+The site was tested in Safari on mobile and tablet.
+
+No issues arose during browser testing.
+
+## Responsiveness
+
+Responsivity tests were carried out using Google Chrome DevTools. Device screen sizes covered include:
+
+- iPhone SE
+- iPhone XR
+- iPhone 12 Pro
+- Pixel 7
+- Samsung Galaxy S8+
+- Samsung Galaxy S20 Ultra
+- iPad Mini
+- iPad Air
+- Surface Pro 7
+- Surface Duo
+- Galaxy Fold
+- Samsung Galaxy A51/71
+- Nest Hub
+- Nest Hub Max
+
+I also personally tested the website on iPhone 10, iPad Pro 2nd Generation, Dell widescreen monitor. All pages looks good on all screen sizes.
+
+## Fixed Bugs
+
+* After encountering a Server error 500 when attempting to sign up for an account on Heroku, I conducted further testing locally and discovered an error related to SMTP.starttls(). Seeking a solution, I searched for similar issues on Slack and found a recommendation to create a runtime.txt file specifying python-3.9.19. Following this advice, I created the runtime.txt file and pushed the changes, resolving the SMTP-related error.
+
+## Unfixed Bugs
+
+* Despite following the instructions from the Boutique Ado video, I encountered difficulties setting up the Country dropdown list on the payment form of the Checkout page. 

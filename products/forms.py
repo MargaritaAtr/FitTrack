@@ -23,7 +23,7 @@ class ProductForm(forms.ModelForm):
             'special_price',
         ]
     image = forms.ImageField(
-    label='Image', required=False, widget=CustomClearableFileInput)
+            label='Image', required=False, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -60,7 +60,8 @@ class ReviewForm(forms.ModelForm):
     rating = forms.ChoiceField(
         choices=RATING_CHOICES,
         label='Please select a rating between 1 and 5',
-        widget=forms.Select(attrs={'class': 'form-select', 'style': 'width: 80px;'})
+        widget=forms.Select(attrs={'class': 'form-select',
+                                   'style': 'width: 80px;'})
     )
 
     def __init__(self, user, product, *args, **kwargs):
