@@ -2,10 +2,12 @@
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group">
-            <input class="form-control form-control-sm qty_input text-center" type="number"
-                name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                data-item_id="{{ item.item_id }}"
+            <input class="form-control form-control-sm qty_input text-center" type="number" name="quantity"
+                value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
                 id="id_qty_{{ item.item_id }}">
-    </div>
+        </div>
     </div>
 </form>
+<a class="update-link text-light  float-left"><small>Update</small></a>
+<a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
+    data-product_size="{{ item.size }}"><small>Remove</small></a>
