@@ -29,7 +29,7 @@ The website is live and the link can be fund [Here](https://fit-track-0314c0bbcc
   + [ Languages Used](#languages-used " Languages Used")
   + [Frameworks, Programs Used](#frameworks-programs-used "Frameworks, Programs Used")
 ## [Deployment and Local Development](#deployment-and-local-development "Deployment and Local Development")
-## [Credits](#credits "Credits")
+ ## [Credits](#credits "Credits")
  
 
 # `UX`
@@ -281,6 +281,7 @@ All pages are fully responsive across all screen sizes.
 * The Contact form is accessible whether a user is logged in or not via the "Contact" icon in the navigation bar.
 * The form prompts users to fill in their name, email, subject line, and message. Below the form, a button is provided to allow users to submit their message.
 * The contact form is configured to send a confirmation email to the user, containing their message subject and content, repeated back to them for their records.
+* Additionally, there's a Cancel button available for users who may have changed mind about contacting us. Clicking this button will smoothly redirect them back to the homepage.
 
 
 ## Success & alter messages 
@@ -356,7 +357,7 @@ For testing please the [Testing](/testing.md) documentation.
 - [Miro](https://miro.com/)
   - Miro was used to create Wireframes for the project during the initial planning stage.
 
-  - [Imageresizer](https://imageresizer.com/)
+- [Imageresizer](https://imageresizer.com/)
   - Imagerisizer was used to resize images for a faster loading time.
 
 - [TinyPNG](https://tinypng.com/)
@@ -521,6 +522,7 @@ If you use AWS to host your static/media files you will also need to set
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 Otherwise these must be adjusted as appropriate within settings.py
+
 
 ### Static and Media Files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
