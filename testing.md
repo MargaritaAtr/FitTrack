@@ -563,6 +563,8 @@ I also personally tested the website on iPhone 10, iPad Pro 2nd Generation, Dell
 ## Fixed Bugs
 
 * After encountering a Server error 500 when attempting to sign up for an account on Heroku, I conducted further testing locally and discovered an error related to SMTP.starttls(). Seeking a solution, I searched for similar issues on Slack and found a recommendation to create a runtime.txt file specifying python-3.9.19. Following this advice, I created the runtime.txt file and pushed the changes, resolving the SMTP-related error.
+* After reviewing the code, it became evident that the "Update" link was non-functional on mobile screens. Further investigation revealed that the links to the quantity form HTML file were inadvertently excluded.
+* During the last testing session, I discovered that the order total wasn't updating. After reviewing the code, I identified that a line responsible for updating the order total was missing. Once I added it, everything was fixed.
 
 ## Unfixed Bugs
 
